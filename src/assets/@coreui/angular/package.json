@@ -1,0 +1,69 @@
+{
+  "_from": "@coreui/angular",
+  "_id": "@coreui/angular@2.2.2",
+  "_inBundle": false,
+  "_integrity": "sha512-WUVZDHkX5CIhdwCxaLTpbUIXKGO6rV2GkNbxqT4jcxmASqG7KBReFvInenrxjPkkEGS6W8K30Sfy3H6CqileyQ==",
+  "_location": "/@coreui/angular",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "@coreui/angular",
+    "name": "@coreui/angular",
+    "escapedName": "@coreui%2fangular",
+    "scope": "@coreui",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@coreui/angular/-/angular-2.2.2.tgz",
+  "_shasum": "fb60bffd8903e9a81b207c141944fb6427a0b705",
+  "_spec": "@coreui/angular",
+  "_where": "D:\\Client Project\\ClinicWebApi\\DentalClinicUI\\Dc-app",
+  "author": {
+    "name": "Łukasz Holeczek",
+    "url": "http://holeczek.pl"
+  },
+  "bugs": {
+    "url": "https://github.com/coreui/coreui-angular/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Andrzej Kopański",
+      "url": "https://github.com/xidedix"
+    }
+  ],
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "deprecated": false,
+  "description": "CoreUI Angular Bootstrap 4 components",
+  "es2015": "fesm2015/coreui-angular.js",
+  "esm2015": "esm2015/coreui-angular.js",
+  "esm5": "esm5/coreui-angular.js",
+  "fesm2015": "fesm2015/coreui-angular.js",
+  "fesm5": "fesm5/coreui-angular.js",
+  "homepage": "https://coreui.io/angular",
+  "license": "MIT",
+  "main": "bundles/coreui-angular.umd.js",
+  "metadata": "coreui-angular.metadata.json",
+  "module": "fesm5/coreui-angular.js",
+  "name": "@coreui/angular",
+  "peerDependencies": {
+    "@angular/common": "^7.1.1",
+    "@angular/core": "^7.1.1",
+    "@coreui/coreui": "^2.1.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coreui/coreui-angular.git"
+  },
+  "sideEffects": false,
+  "typings": "coreui-angular.d.ts",
+  "version": "2.2.2"
+}

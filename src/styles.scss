@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./assets/variables";
+
+// Import styles
+@import "~@coreui/coreui/scss/coreui";
+
+// If you want to add something do it here
+// @import "custom";
+
+@import "~@coreui/icons/css/coreui-icons.css";
+@import "../node_modules/flag-icon-css/css/flag-icon.css";
+@import  "../node_modules/font-awesome/css/font-awesome.css";
+@import  "../node_modules/simple-line-icons/css/simple-line-icons.css"; 
