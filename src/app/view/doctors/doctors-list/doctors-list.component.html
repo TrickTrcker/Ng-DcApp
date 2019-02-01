@@ -1,3 +1,712 @@
-<p>
-  doctors-list works!
-</p>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="ui-g-8 ui-lg-8 ui-md-12 ui-sm-12">
+      <div class="ui-g-12 ui-md-12">
+        <div class="ui-g-12">
+          <div class="ms-CommandBar">
+            <div class="input-group">
+              <div class="input-group-prepend ui-lg-8 ui-md-6 ui-sm-5">
+                <button type="button" class="btn btn-light  btn-sm apex-btn" (click)="doctordetails_display=true">
+                  <i class="icon-plus icons font-lg"></i>
+                  Add New</button>
+              </div>
+              <div class="input-group-prepend ui-lg-4 ui-md-6 ui-sm-7">
+                <button type="button" class="btn btn-light  btn-sm apex-btn ">
+                  <!-- <i class="fa fa-search"></i> -->
+                  <i class="icon-magnifier icons font-lg d-block mt-0"></i>
+                </button>
+                <input type="text" class="field-68" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-g-12 ui-md-12 dca-data-table">
+          <p-table [value]="doctorData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
+            sortMode="single">
+            <ng-template pTemplate="header">
+              <tr>
+                <th [pSortableColumn]="name">
+                  Doctor
+                  <p-sortIcon [field]="name" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="comingappoinmentNtes">
+                  Last Appointment
+                  <p-sortIcon [field]="comingappoinmentNtes"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="nextappointmentNotes">
+                  Next Appointment
+                  <p-sortIcon [field]="nextappointmentNotes"></p-sortIcon>
+                </th>
+                <th></th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-doctor>
+              <tr>
+                <td (click)="show_doctorDetails(doctor);">
+                  <div class="root-71">
+                    <div class=" coin-78">
+                      <div class=" imageArea-80">
+                        <div class="initials-95" aria-hidden="true">
+                          <span>F</span>
+                        </div>
+                        <div class=" image-84" style="width: 40px; height: 40px;">
+                          <img class=" image-85" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="ms-TooltipHost host_a3f87333">{{ doctor.name }}</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <span>{{ doctor.comingappoinment }}</span>
+                      </div>
+                      <div class="tertiaryText-75">
+                      </div>
+                      <div class=" optionalText-76">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="root-71">
+                    <div class=" coin-78">
+                      <div class="imageArea-80">
+                        <div class="ms-Persona-initials initials-83">
+                          <span>A</span>
+                        </div>
+                        <div class=" image-84" style="width: 40px; height: 40px;">
+                          <img class=" image-85" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="ms-TooltipHost host_a3f87333">{{ doctor.comingappoinmentNtes }}</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <span>{{ doctor.lastappointment }}</span>
+                      </div>
+                      <div class="tertiaryText-75">
+                      </div>
+                      <div class=" optionalText-76">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="root-71">
+                    <div class=" coin-78">
+                      <div class="imageArea-80">
+                        <div class="ms-Persona-initials initials-94">
+                          <span>D</span>
+                        </div>
+                        <div class=" image-84" style="width: 40px; height: 40px;">
+                          <img class=" image-85" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="ms-TooltipHost host_a3f87333">Dwight Dawkins</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <span>13 upcoming appointments</span>
+                      </div>
+                      <div class="tertiaryText-75">
+                      </div>
+                      <div class=" optionalText-76">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td class="delete-td">
+                  <button type="button" class="delete-button root-90" (click)="isDelete=true">
+                    <div class="flexContainer-55">
+                      <i class="cui-trash icons font-lg d-block mt-0"></i>
+                    </div>
+                  </button>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g-4 ui-lg-4 ui-md-12 ui-sm-12" style="margin-top: 10px">
+      <div class="ui-g-12 ui-md-12">
+        <table class="ms-table duty-table">
+          <tbody>
+            <tr>
+              <th class="day-name">Sunday</th>
+              <td class="doctor">
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class=" imageArea-80">
+                      <div class="initials-99" aria-hidden="true"><span>A</span></div>
+                      <div class=" image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">
+                        Adam Smith</div>
+                    </div>
+                    <div class="secondaryText-74"><span>0 appointments for sunday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-96" aria-hidden="true"><span>D</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="ms-TooltipHost host_a3f87333">Dwight Dawkins</div>
+                    </div>
+                    <div class="secondaryText-74"><span>0 appointments for sunday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="day-name">Monday</th>
+              <td class="doctor">
+                <div class=" m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class=" initials-99" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">
+                        Adam Smith</div>
+                    </div>
+                    <div class="secondaryText-74"><span>0 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-96" aria-hidden="true"><span>D</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Dwight Dawkins</div>
+                    </div>
+                    <div class=" secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class=" tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-95" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Alex Corvi</div>
+                    </div>
+                    <div class="secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="day-name">Tuesday</th>
+              <td class="doctor">
+                <div class=" m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class=" initials-99" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">
+                        Adam Smith</div>
+                    </div>
+                    <div class="secondaryText-74"><span>0 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-96" aria-hidden="true"><span>D</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Dwight Dawkins</div>
+                    </div>
+                    <div class=" secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class=" tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-95" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Alex Corvi</div>
+                    </div>
+                    <div class="secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="day-name">Wednesday</th>
+              <td class="doctor">
+                <div class=" m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class=" initials-99" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">
+                        Adam Smith</div>
+                    </div>
+                    <div class="secondaryText-74"><span>0 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-96" aria-hidden="true"><span>D</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Dwight Dawkins</div>
+                    </div>
+                    <div class=" secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class=" tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-95" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Alex Corvi</div>
+                    </div>
+                    <div class="secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="day-name">Thursday</th>
+              <td class="doctor">
+                <div class=" m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class=" initials-99" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">
+                        Adam Smith</div>
+                    </div>
+                    <div class="secondaryText-74"><span>0 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-96" aria-hidden="true"><span>D</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Dwight Dawkins</div>
+                    </div>
+                    <div class=" secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class=" tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-95" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Alex Corvi</div>
+                    </div>
+                    <div class="secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="day-name">Friday</th>
+              <td class="doctor">
+                <div class=" m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class=" initials-99" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">
+                        Adam Smith</div>
+                    </div>
+                    <div class="secondaryText-74"><span>0 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-96" aria-hidden="true"><span>D</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Dwight Dawkins</div>
+                    </div>
+                    <div class=" secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class=" tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-95" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Alex Corvi</div>
+                    </div>
+                    <div class="secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th class="day-name">Saturday</th>
+              <td class="doctor">
+                <div class=" m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class=" initials-99" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">
+                        Adam Smith</div>
+                    </div>
+                    <div class="secondaryText-74"><span>0 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-96" aria-hidden="true"><span>D</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Dwight Dawkins</div>
+                    </div>
+                    <div class=" secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class=" tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+                <div class="m-b-5 root-71" (click)="show_doctorDetails();">
+                  <div class="coin-78">
+                    <div class="imageArea-80">
+                      <div class="initials-95" aria-hidden="true"><span>A</span></div>
+                      <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          alt=""></div>
+                    </div>
+                  </div>
+                  <div class="ms-Persona-details details-72">
+                    <div class="primaryText-73">
+                      <div class="host_a3f87333">Alex Corvi</div>
+                    </div>
+                    <div class="secondaryText-74"><span>1 appointments for monday</span></div>
+                    <div class="tertiaryText-75"></div>
+                    <div class="optionalText-76"></div>
+                  </div>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p-sidebar [(visible)]="doctordetails_display" [blockScroll]="true" position="right" styleClass="custom_sidebar ui-sidebar-md"
+      [showCloseIcon]="false" [modal]="true">
+      <div class="card custom_card">
+        <div class="card-header ui-g ms-CommandBar">
+          <div class="ui-g-12 no-padding">
+            <div class="root-71">
+              <div class=" coin-78">
+                <div class=" imageArea-80">
+                  <div class="initials-83" aria-hidden="true">
+                    <span>F</span>
+                  </div>
+                  <div class=" image-84" style="width: 40px; height: 40px;">
+                    <img class=" image-85" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="ms-Persona-details details-72">
+                <div class="primaryText-73">
+                  <div class="ms-TooltipHost host_a3f87333">fdsfdsfds</div>
+                </div>
+                <div class="secondaryText-74">
+                  <span>fdsfdsf</span>
+                </div>
+                <div class="tertiaryText-75">
+                </div>
+                <div class=" optionalText-76">
+                </div>
+              </div>
+              <span class="align-middle float-right">
+                <button type="button" (click)="doctordetails_display=false" class="close" aria-label="Close">
+                  <span style="font-size: 25px" aria-hidden="true">&times;</span>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <br />
+        <p-scrollPanel [style]="{width: '100%', height: '650px'}">
+          <div class="card-body">
+            <div class="card">
+              <div class="card-header" (click)="isCollapsedDoctorInfo = !isCollapsedDoctorInfo">
+                Doctor information
+                <div class="card-header-actions">
+                  <!-- <i class="icon-arrow-down icons font-1xl d-block mt-0"></i> -->
+                  <i [ngClass]="{'icon-arrow-down': isCollapsedDoctorInfo, 'icon-arrow-up': !isCollapsedDoctorInfo}"
+                    class="icons font-1xl d-block mt-0"></i>
+                </div>
+              </div>
+              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedDoctorInfo">
+                <div class="form-group">
+                  <label for="doctor">Name:</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="border:1px solid gray;border-radius:0px;">Dr.</span>
+                    <input class="form-control" id="doctor" placeholder="" type="text">
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" (click)="isCollapsedAppointments = !isCollapsedAppointments">
+                Appointments
+                <div class="card-header-actions">
+                  <i [ngClass]="{'icon-arrow-down': isCollapsedAppointments, 'icon-arrow-up': !isCollapsedAppointments}"
+                    class="icons font-1xl d-block mt-0"></i>
+                </div>
+              </div>
+              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedAppointments">
+                <div class="form-group">
+                  <label for="doctor">Filter</label>
+                  <input class="form-control" id="doctor" placeholder="search" type="text">
+                </div>
+                <hr>
+                <p style="text-align: right; font-size: 13px; color: rgb(158, 158, 158);">Results: 10 out of 10</p>
+                <div class="appointment-thumbnail-component labeled missed clickable">
+                  <div class="m-b-5">
+                    <div class="root-71">
+                      <div class="coin-78">
+                        <div class="ms-Persona-imageArea imageArea-80">
+                          <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
+                          <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                              alt=""></div>
+                        </div>
+                      </div>
+                      <div class="ms-Persona-details details-72">
+                        <div class="primaryText-73">
+                          <div class="host_a3f87333">Amalgam C II</div>
+                        </div>
+                        <div class="secondaryText-74">
+                          <div class="host_a3f87333">14 days ago</div>
+                        </div>
+                        <div class="tertiaryText-75"></div>
+                        <div class="optionalText-76"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
+                </div>
+                <div class="appointment-thumbnail-component labeled missed clickable">
+                  <div class="m-b-5">
+                    <div class="root-71">
+                      <div class="coin-78">
+                        <div class="ms-Persona-imageArea imageArea-80">
+                          <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
+                          <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                              alt=""></div>
+                        </div>
+                      </div>
+                      <div class="ms-Persona-details details-72">
+                        <div class="primaryText-73">
+                          <div class="host_a3f87333">Amalgam C II</div>
+                        </div>
+                        <div class="secondaryText-74">
+                          <div class="host_a3f87333">14 days ago</div>
+                        </div>
+                        <div class="tertiaryText-75"></div>
+                        <div class="optionalText-76"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
+                </div>
+                <div class="appointment-thumbnail-component labeled missed clickable">
+                  <div class="m-b-5">
+                    <div class="root-71">
+                      <div class="coin-78">
+                        <div class="ms-Persona-imageArea imageArea-80">
+                          <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
+                          <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                              alt=""></div>
+                        </div>
+                      </div>
+                      <div class="ms-Persona-details details-72">
+                        <div class="primaryText-73">
+                          <div class="host_a3f87333">Amalgam C II</div>
+                        </div>
+                        <div class="secondaryText-74">
+                          <div class="host_a3f87333">14 days ago</div>
+                        </div>
+                        <div class="tertiaryText-75"></div>
+                        <div class="optionalText-76"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
+        </p-scrollPanel>
+      </div>
+    </p-sidebar>
+    <p-sidebar [(visible)]="isDelete" position="bottom" styleClass="ui-sidebar-sm" [showCloseIcon]="false" [modal]="true"
+      [baseZIndex]="10000">
+      <div style="overflow-y: auto">
+        <p>Are you sure you want to delete Dr. Alex Corvi?</p>
+        <div style="margin-top: 5px">
+          <button class="btn btn-square btn-sm btn-primary" (click)="isDelete=false" type="button">
+            <i class="icon-check icons font-lg mt-0"></i>
+            &nbsp;Confirm </button> &nbsp;
+          <button class="btn btn-square btn-sm btn-primary" (click)="isDelete=false" type="button">
+            <i class="icon-close icons font-lg mt-0"></i>
+            &nbsp;Cancel</button>
+        </div>
+      </div>
+      <br />
+    </p-sidebar>
+    <p-sidebar [(visible)]="isDeleteAppointment" position="bottom" styleClass="ui-sidebar-sm" [showCloseIcon]="false"
+      [modal]="true" [baseZIndex]="10000">
+      <div style="overflow-y: auto">
+        <p>Are you sure you want to delete this appointment?</p>
+        <div style="margin-top: 5px">
+          <button class="btn btn-square btn-sm btn-primary" (click)="isDeleteAppointment=false" type="button">
+            <i class="icon-check icons font-lg mt-0"></i>
+            &nbsp;Confirm </button> &nbsp;
+          <button class="btn btn-square btn-sm btn-primary" (click)="isDeleteAppointment=false" type="button">
+            <i class="icon-close icons font-lg mt-0"></i>
+            &nbsp;Cancel</button>
+        </div>
+      </div>
+      <br />
+    </p-sidebar>
+  </div>
+</div>

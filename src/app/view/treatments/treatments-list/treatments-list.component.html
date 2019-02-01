@@ -1,3 +1,195 @@
-<p>
-  treatments-list works!
-</p>
+<div class="animated fadeIn">
+  <div class="row">
+    <div class="ui-g-12 ui-lg-12 ui-md-12 ui-sm-12">
+      <div class="ui-g-12 ui-md-12">
+        <div class="ui-g-12">
+          <div class="ms-CommandBar">
+            <div class="input-group">
+              <div class="input-group-prepend ui-lg-10 ui-md-8 ui-sm-6">
+                <button type="button" class="btn btn-light  btn-sm apex-btn" (click)="doctordetails_display=true">
+                  <i class="icon-plus icons font-lg"></i>
+                  Add New</button>
+              </div>
+              <div class="input-group-prepend ui-lg-2 ui-md-4 ui-sm-6">
+                <button type="button" class="btn btn-light  btn-sm apex-btn ">
+                  <!-- <i class="fa fa-search"></i> -->
+                  <i class="icon-magnifier icons font-lg d-block mt-0"></i>
+                </button>
+                <input type="text" class="field-68" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ui-g-12 ui-md-12 dca-data-table">
+          <p-table [value]="treatmentData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
+            sortMode="single">
+            <ng-template pTemplate="header">
+              <tr>
+                <th [pSortableColumn]="treatment">
+                  Treatment
+                  <p-sortIcon [field]="treatment" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="expenses">
+                  Expenses/unit
+                  <p-sortIcon [field]="expenses"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="doneAppointments">
+                  Done appointments
+                  <p-sortIcon [field]="doneAppointments"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="upcomingAppointments">
+                  Upcoming appointments
+                  <p-sortIcon [field]="upcomingAppointments"></p-sortIcon>
+                </th>
+                <th></th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-treatment>
+              <tr>
+                <td (click)="show_treatmentDetails(treatment);">
+                  <div class="root-71">
+                    <div class=" coin-78">
+                      <div class=" imageArea-80">
+                        <div class="ms-Persona-initials initials-95" aria-hidden="true">
+                          <span>F</span>
+                        </div>
+                        <div class=" image-84" style="width: 40px; height: 40px;">
+                          <img class=" image-85" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="ms-TooltipHost host_a3f87333">{{ treatment.treatment }}</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <span>{{ treatment.unit }}</span>
+                      </div>
+                      <div class="tertiaryText-75">
+                      </div>
+                      <div class=" optionalText-76">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  {{ treatment.expenses }}
+                </td>
+                <td>
+                  {{ treatment.doneAppointments }}
+                </td>
+                <td>
+                  {{ treatment.upcomingAppointments }}
+                </td>
+                <td class="delete-td">
+                  <button type="button" class="delete-button root-90" (click)="isDelete=true">
+                    <div class="flexContainer-55">
+                      <i class="cui-trash icons font-lg d-block mt-0"></i>
+                    </div>
+                  </button>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </div>
+
+    <p-sidebar [(visible)]="treatment_display" [blockScroll]="true" position="right" styleClass="custom_sidebar ui-sidebar-md"
+      [showCloseIcon]="false" [modal]="true">
+      <div class="card custom_card">
+        <div class="card-header ui-g ms-CommandBar">
+          <div class="ui-g-12 no-padding">
+            <div class="root-71">
+              <div class=" coin-78">
+                <div class=" imageArea-80">
+                  <div class="ms-Persona-initials initials-95" aria-hidden="true">
+                    <span>F</span>
+                  </div>
+                  <div class=" image-84" style="width: 40px; height: 40px;">
+                    <img class=" image-85" alt="">
+                  </div>
+                </div>
+              </div>
+              <div class="ms-Persona-details details-72">
+                <div class="primaryText-73">
+                  <div class="ms-TooltipHost host_a3f87333">fdsfdsfds</div>
+                </div>
+                <div class="secondaryText-74">
+                  <span>fdsfdsf</span>
+                </div>
+                <div class="tertiaryText-75">
+                </div>
+                <div class=" optionalText-76">
+                </div>
+              </div>
+              <span class="align-middle float-right">
+                <button type="button" (click)="treatment_display=false" class="close" aria-label="Close">
+                  <span style="font-size: 25px" aria-hidden="true">&times;</span>
+                </button>
+              </span>
+            </div>
+          </div>
+        </div>
+        <br />
+        <p-scrollPanel [style]="{width: '100%', height: '650px'}">
+          <div class="card-body">
+            <div class="card">
+              <div class="card-header" (click)="isCollapsedTreatmentInfo = !isCollapsedTreatmentInfo">
+                Treatment details
+                <div class="card-header-actions">
+                  <!-- <i class="icon-arrow-down icons font-1xl d-block mt-0"></i> -->
+                  <i [ngClass]="{'icon-arrow-down': isCollapsedTreatmentInfo, 'icon-arrow-up': !isCollapsedTreatmentInfo}"
+                    class="icons font-1xl d-block mt-0"></i>
+                </div>
+              </div>
+              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedTreatmentInfo">
+                <div class="form-group">
+                  <label for="doctor">Treatment title</label>
+                  <input class="form-control" id="doctor" placeholder="" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="doctor">Treatment expenses (per unit)</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="border:1px solid gray;border-radius:0px;">&#8377;</span>
+                    <input class="form-control" id="doctor" placeholder="" type="number">
+                  </div>
+                </div>
+                <div class="form-group">
+
+                  <label for="exampleFormControlSelect1">Active</label>
+                  <!-- <select class="form-control" id="exampleFormControlSelect1">
+                    <option value="1">Yes</option>
+                    <option value="2">No</option>
+                  </select> -->
+                  <div class="input-group-prepend">
+                    <label class="switch switch-pill switch-label switch-primary">
+                      <input type="checkbox" class="switch-input" checked>
+                      <span class="switch-slider" data-checked="Yes" data-unchecked="No"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </p-scrollPanel>
+      </div>
+    </p-sidebar>
+    <p-sidebar [(visible)]="isDelete" position="bottom" styleClass="ui-sidebar-sm" [showCloseIcon]="false" [modal]="true"
+      [baseZIndex]="10000">
+      <div style="overflow-y: auto">
+        <p>Treatment "Teeth Whitening" will deleted</p>
+        <div style="margin-top: 5px">
+          <button class="btn btn-square btn-sm btn-primary" (click)="isDelete=false" type="button">
+            <i class="icon-check icons font-lg mt-0"></i>
+            &nbsp;Confirm </button> &nbsp;
+          <button class="btn btn-square btn-sm btn-primary" (click)="isDelete=false" type="button">
+            <i class="icon-close icons font-lg mt-0"></i>
+            &nbsp;Cancel</button>
+        </div>
+      </div>
+      <br />
+    </p-sidebar>
+  </div>
+</div>

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   }
 
   onlogin(){
-    this.router.navigate(["/no-back"]);
+    this.router.navigate(["/main"]);
   }
 
 }

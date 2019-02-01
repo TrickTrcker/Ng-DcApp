@@ -6,11 +6,11 @@ import { SettingsComponent } from './settings/settings.component';
 import { StatisticsComponent } from './statistics/statistics.component'; 
 
 const routes: Routes = [
-  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
     path: '', component: DefaultLayoutComponent,
     children: [
-      { path: '', redirectTo: 'home', pathMatch: 'full' },
+     // { path: '', redirectTo: 'home', pathMatch: 'full' },
       { path: 'home', component: HomeComponent },
       { path: 'doctors', loadChildren: './doctors/doctors.module#DoctorsModule' },
       { path: 'patients', loadChildren: './patients/patients.module#PatientsModule' },

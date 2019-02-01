@@ -5,7 +5,7 @@ import { P404Component } from './containers/error/p404/p404.component';
 const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', loadChildren: './containers/containers.module#ContainersModule' },
-  { path: 'no-back', loadChildren: './view/view.module#ViewModule' },
+  { path: 'main', loadChildren: './view/view.module#ViewModule' },
   { path: '**', component: P404Component }
 ];
 

@@ -1,0 +1,740 @@
+.ms-CommandBar {
+  box-sizing: content-box;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, .15);
+  background-color: #fff !important;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dca-data-table .ms-table {
+  background: #fafafa
+}
+
+.dca-data-table .ui-paginator {
+  background-color: transparent;
+  border: 1px solid transparent;
+  padding: 0;
+}
+
+.dca-data-table .ms-table td.clickable {
+  transition: all .3s;
+  cursor: pointer
+}
+
+.dca-data-table .ms-table td.clickable:hover {
+  background: #f5f5f5
+}
+
+.dca-data-table tr {
+  border-bottom: 1px solid #f3f3f3
+}
+
+.dca-data-table .ms-SearchBox {
+  border: none;
+  margin-top: 4px
+}
+
+.dca-data-table .ms-CommandBar-secondaryCommand {
+  border-left: 1px solid #f3f3f3
+}
+
+.dca-data-table .ms-CommandBarItem-link {
+  background: #fff !important;
+  transition: all .3s
+}
+
+.dca-data-table .ms-CommandBarItem-link:hover {
+  background: #eee !important
+}
+
+.dca-data-table .no-data {
+  text-align: center;
+  background: #424242;
+  padding: 15px;
+  color: #fff;
+  font-size: 13px
+}
+
+.dca-data-table .delete-button {
+  background: #e3e3e3;
+  color: #212121;
+  border-radius: 3px
+}
+.dca-data-table .delete-button, button:focus{
+  outline: none;
+}
+
+.dca-data-table .delete-button:hover {
+  color: #fff;
+  background: #f44336
+}
+
+.dca-data-table .delete-td {
+  text-align: right;
+  padding-right: 12px
+}
+
+.ui-table table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: auto;
+}
+
+.ms-table {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+  width: 100%;
+  border-collapse: collapse
+}
+
+.ms-table thead tr th {
+  text-align: left
+}
+
+.ms-table td,
+.ms-table th {
+  border: none !important;
+  background: #fff !important;
+  padding: 12px !important;
+  font-size: 14px !important;
+  border: none !important;
+}
+
+.ms-table th {
+  font-weight: 300 !important;
+  font-size: 13px !important;
+  padding: 12px 15px  !important;
+  background: #fafafa !important;
+}
+.ms-table th:focus {
+    background: #212121 !important;
+    color: #fff !important;
+}
+.ms-table th .ui-sortable-column-icon{
+float: right !important;
+}
+.ms-table th .sort-indicators .negative,
+.ms-table th .sort-indicators .positive {
+  display: none
+}
+
+.ms-table th.current {
+  background: #212121;
+  color: #fff
+}
+
+.ms-table th.current .sort-indicators {
+  float: right
+}
+.ms-table .ui-sortable-column.ui-state-highlight{
+
+}
+.ms-table th.current.negative .sort-indicators .negative,
+.ms-table th.current.positive .sort-indicators .positive {
+  display: block
+}
+
+.ms-table .table-head-sort {
+  cursor: pointer
+}
+
+.ms-table .table-head-sort:hover {
+  background: #f5f5f5;
+  color: #212121
+}
+
+/* custom styles */
+.apex-btn {
+  background: #fff !important;
+  transition: all .3s;
+  color: rgb(51, 51, 51);
+  height: 100%;
+  user-select: none;
+  outline: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: initial;
+  text-decoration: none;
+  border-radius: 0px;
+}
+.apex-btn:focus{
+  outline: none;
+}
+.apex-btn:hover{
+  outline: none;
+}
+
+.border-none {
+  border: none !important;
+}
+.field-68 {
+  box-shadow: none;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0.5px;
+  padding-left: 0px;
+  box-sizing: border-box;
+  font-weight: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  color: rgb(51, 51, 51);
+  background-color: rgb(255, 255, 255);
+  text-overflow: ellipsis;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  outline: none;
+  flex: 1 1 0px;
+  overflow: hidden;
+}
+
+/* .form-control:focus {
+  color: #5c6873;
+  background-color: #fff; */
+  /* border-color: #8ad4ee; */
+  /* outline: 0;
+  box-shadow: 0 0 0 0.1rem rgba(233, 243, 247, 0.25) !important;
+  border: 1px;
+} */
+/* .app-footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 0 1rem;
+    color: #23282c;
+    background: #f0f3f5;
+    border-top: 1px solid #c8ced3;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 30px !important;
+    flex: 0 0 30px !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    z-index: 2600;
+} */
+.doctor-table-initial
+{
+    float: left;
+    /* width: 10%; */
+    
+    /* perspective: 1px; */
+    /* overflow: hidden;
+    border-width: 0px;
+    border-style: initial;
+    border-color: initial;
+    border-image: initial; */
+    border-radius: 50%;
+    padding: 5px 7px;
+    background: #da1a21;
+    color: #fff;
+}
+.doctor-table-grid
+{
+    width: 85%;
+    float: right;
+}
+.tbl-grid-span
+{
+    clear: both;
+    text-align: center;
+    font-size: 12px;
+}
+.ui-sidebar-left.ui-sidebar-active, .ui-sidebar-right.ui-sidebar-active {
+    z-index: 1024 !important;
+}
+.custom_sidebar
+{
+    padding: 0px !important;
+}
+.custom_card
+{
+   border: none !important;
+}
+.custom_card .card-header
+{
+border-radius: 0 !important;
+/* border: none !important; */
+/* box-shadow: 0 10px 30px rgba(0, 0, 0, .15) !important; */
+background-color: #fff !important;
+}
+.no-padding
+{
+    padding: 0px !important;
+}
+/* .custom_card .card-body{
+    clear: both;
+    display: block;
+    padding: 0px 15px;
+    margin-top:0px;
+} */
+.image-85 {
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.image-84 {
+  position: absolute;
+  margin-right: 10px;
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  perspective: 1px;
+  overflow: hidden;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 50%;
+}
+ 
+.initials-83 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(255, 0, 151);
+  border-radius: 50%; 
+}
+.initials-120 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(153, 180, 51);
+  border-radius: 50%;
+}
+.initials-100 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(231, 115, 189);
+  border-radius: 50%;
+}
+.initials-99 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(45, 137, 239);
+  border-radius: 50%;
+}
+.initials-98 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(0, 171, 169);
+  border-radius: 50%;
+}
+.initials-96 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(0, 171, 169);
+  border-radius: 50%;
+}
+.initials-95 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(0, 163, 0);
+  border-radius: 50%;
+}
+.initials-94 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(96, 60, 186);
+  border-radius: 50%;
+}
+.initials-95 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(218, 83, 44);
+  border-radius: 50%;
+}
+.initials-133 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(45, 137, 239);
+  border-radius: 50%;
+}
+.ms-Persona-initials {
+  border-radius: 0;
+  font-size: 14px;
+}
+.coin-78 {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+}
+.imageArea-80 {
+  position: relative;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  flex: 0 0 auto;
+}
+.secondaryText-74 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  font-size: 12px;
+  overflow: hidden;
+}
+
+.root-90 {
+  position: relative;
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  vertical-align: top;
+  padding-top: 0px;
+  padding-right: 4px;
+  padding-bottom: 0px;
+  padding-left: 4px;
+  width: 32px;
+  height: 32px;
+  background-color: transparent;
+  user-select: none;
+  outline: transparent;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent;
+  border-image: initial;
+  text-decoration: none;
+  border-radius: 0px;
+}
+.root-90:hover {
+  color: rgb(0, 69, 120);
+} 
+
+.flexContainer-55 {
+  display: flex;
+  height: 100%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+ 
+
+.root-71 {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: none;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  position: relative;
+  height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+}
+.details-72 {
+  padding-top: 0px;
+  padding-right: 24px;
+  padding-bottom: 0px;
+  padding-left: 16px;
+  min-width: 0px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.ms-Persona-details {
+  line-height: 1.5;
+}
+.primaryText-73 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(51, 51, 51);
+  font-weight: 400;
+  font-size: 14px;
+  overflow: hidden;
+}
+.secondaryText-74 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  font-size: 12px;
+  overflow: hidden;
+}
+.tertiaryText-75 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  font-size: 12px;
+  display: none;
+  overflow: hidden;
+}
+.optionalText-76 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  font-size: 12px;
+  display: none;
+  overflow: hidden;
+}
+.host_a3f87333 {
+  display: inline;
+}
+.m-b-5 {
+  margin-bottom: 5px;
+}
+.initials-125 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(0, 171, 169);
+  border-radius: 50%;
+} 
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(2.0625rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #5c6873;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid gray;
+  border-radius: 0rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.ui-sidebar-top.ui-sidebar-sm, .ui-sidebar-bottom.ui-sidebar-sm {
+  height: 6em;
+}
+.duty-table tr {
+  border: 1px solid #eee;
+}
+.duty-table tr {
+  border: 1px solid #eee
+}
+.duty-table {
+  display: inline-table;
+} 
+/* @media (max-width:1200px) {
+  .duty-table {
+      margin-top: 20px
+  }
+}
+
+@media (max-width:435px) {
+  .duty-table {
+      display: none
+  }
+}  */
+.component.labeled:before {
+  content: "PAST";
+  background: #e0e0e0;
+  display: inline-block;
+  margin-right: 6px;
+  padding: 6px 5px 7px;
+  border-radius: 0;
+  font-size: 10px;
+  margin-bottom: 5px;
+  min-width: 80px;
+}
+.appointment-thumbnail-component {
+  position: relative;
+  transition: all .4s
+}
+
+.appointment-thumbnail-component .ms-Persona {
+  transition: all .4s
+}
+
+.appointment-thumbnail-component .delete {
+  cursor: pointer;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-size: 16px;
+  color: #262626;
+  background: #e3e3e3;
+  padding: 7px;
+  border-radius: 3px
+}
+
+.appointment-thumbnail-component .delete:hover {
+  color: #fff;
+  background: #f44336
+}
+
+.appointment-thumbnail-component.to-delete {
+  border-color: #f44336!important
+}
+
+.appointment-thumbnail-component.clickable {
+  cursor: pointer
+}
+
+.appointment-thumbnail-component.clickable:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
+  border-color: #0078d7
+}
+
+.appointment-thumbnail-component.labeled {
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 2px;
+  padding: 6px 6px 0;
+  margin-bottom: 10px;
+  background: #fafafa
+}
+
+.appointment-thumbnail-component.labeled .date-link {
+  display: inline-block
+}
+
+.appointment-thumbnail-component.labeled .date-link a {
+  border: none;
+  margin-bottom: 5px;
+  display: inline-block
+}
+
+.appointment-thumbnail-component.labeled:before {
+  content: "PAST";
+  background: #e0e0e0;
+  display: inline-block;
+  margin-right: 6px;
+  padding: 6px 5px 7px;
+  border-radius: 0;
+  font-size: 10px;
+  margin-bottom: 5px;
+  min-width: 80px
+}
+
+.appointment-thumbnail-component.labeled.today-due {
+  border-color: #b2ebf2
+}
+
+.appointment-thumbnail-component.labeled.today-due:before {
+  content: "TODAY";
+  background: #b2ebf2
+}
+
+.appointment-thumbnail-component.labeled.tomorrow-due {
+  border-color: #ffccbc
+}
+
+.appointment-thumbnail-component.labeled.tomorrow-due:before {
+  content: "TOMORROW";
+  background: #ffccbc
+}
+
+.appointment-thumbnail-component.labeled.missed {
+  border-color: #d1c4e9
+}
+
+.appointment-thumbnail-component.labeled.missed:before {
+  content: "MISSED";
+  background: #d1c4e9
+}
+
+.appointment-thumbnail-component.labeled.to-be-paid {
+  border-color: #ef9a99
+}
+
+.appointment-thumbnail-component.labeled.to-be-paid:before {
+  content: "OUTSTANDING";
+  background: #ef9a99
+}
+
+.appointment-thumbnail-component.labeled.future {
+  border-color: #dcedc8
+}
+
+.appointment-thumbnail-component.labeled.future:before {
+  content: "FUTURE";
+  background: #dcedc8
+}
+
+.appointment-thumbnail-component .appointment-patient-link {
+  display: inline-block;
+  margin-bottom: 7px;
+  font-size: 12px;
+  padding: 5px;
+  background: #eee;
+  transition: all .4s;
+  position: relative;
+  top: 1px
+}
+
+.appointment-thumbnail-component .appointment-patient-link:before {
+  content: "Patient";
+  background: #e0e0e0;
+  color: #3f3f3f;
+  padding: 3px 10px 4px;
+  margin-left: -5px;
+  margin-right: 5px
+}
+
+.appointment-thumbnail-component .appointment-patient-link:hover {
+  background: #fff;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, .1)
+}
+
+.appointment-thumbnail-component .appointment-patient-link i {
+  display: none
+} 
+ 
