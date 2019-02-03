@@ -1,4 +1,4 @@
-<div class="animated fadeIn">
+<div class="animated fadeIn apexo-body">
   <div class="row">
     <div class="ui-g-8 ui-lg-8 ui-md-12 ui-sm-12">
       <div class="ui-g-12 ui-md-12">
@@ -12,10 +12,9 @@
               </div>
               <div class="input-group-prepend ui-lg-4 ui-md-6 ui-sm-7">
                 <button type="button" class="btn btn-light  btn-sm apex-btn ">
-                  <!-- <i class="fa fa-search"></i> -->
                   <i class="icon-magnifier icons font-lg d-block mt-0"></i>
                 </button>
-                <input type="text" class="field-68" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                <input type="text" class="field-68" placeholder="Search">
               </div>
             </div>
           </div>
@@ -134,7 +133,7 @@
         </div>
       </div>
     </div>
-    <div class="ui-g-4 ui-lg-4 ui-md-12 ui-sm-12" style="margin-top: 10px">
+    <div class="ui-g-4 ui-lg-4 ui-md-12 ui-sm-12" style="margin-top: 6px">
       <div class="ui-g-12 ui-md-12">
         <table class="ms-table duty-table">
           <tbody>
@@ -574,12 +573,45 @@
                 </div>
               </div>
               <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedDoctorInfo">
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="doctor">Name:</label>
                   <div class="input-group-prepend">
                     <span class="input-group-text" style="border:1px solid gray;border-radius:0px;">Dr.</span>
                     <input class="form-control" id="doctor" placeholder="" type="text">
                   </div>
+                </div> -->
+                <div class="form-group">
+                  <label for="doctor">Surname:</label>
+                  <input class="form-control" id="doctor" placeholder="" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="doctor">First Name:</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="border:1px solid gray;border-radius:0px;">Dr.</span>
+                    <input class="form-control" id="doctor" placeholder="" type="text">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="doctor">Last Name:</label>
+                  <input class="form-control" id="doctor" placeholder="" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="doctor">Phone Number:</label>
+                  <input class="form-control" id="doctor" placeholder="" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="doctor">Email:</label>
+                  <input class="form-control" id="doctor" placeholder="" type="text">
+                </div>
+                <hr>
+                <div class="form-group">
+                  <label for="doctor">Username:</label>
+                  <input class="form-control" id="doctor" placeholder="" type="text">
+                </div>
+                <div class="form-group">
+                  <label for="doctor">Password:</label>
+                  <input class="form-control" id="doctor" placeholder="" type="text">
                 </div>
               </div>
             </div>

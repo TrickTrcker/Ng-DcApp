@@ -1,4 +1,4 @@
-<div class="animated fadeIn">
+<div class="animated fadeIn apexo-body">
   <div class="row">
     <div class="ui-g-12 ui-lg-12 ui-md-12 ui-sm-12">
       <div class="ui-g-12 ui-md-12">
@@ -21,33 +21,33 @@
           </div>
         </div>
         <div class="ui-g-12 ui-md-12 dca-data-table">
-          <p-table [value]="treatmentData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
+          <p-table [value]="prescriptionsData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
             sortMode="single">
             <ng-template pTemplate="header">
               <tr>
-                <th [pSortableColumn]="treatment">
+                <th [pSortableColumn]="name">
                   Item name
-                  <p-sortIcon [field]="treatment" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                  <p-sortIcon [field]="name" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
                     ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
                 </th>
-                <th [pSortableColumn]="expenses">
+                <th [pSortableColumn]="dose">
                   Dose
-                  <p-sortIcon [field]="expenses"></p-sortIcon>
+                  <p-sortIcon [field]="dose"></p-sortIcon>
                 </th>
-                <th [pSortableColumn]="doneAppointments">
+                <th [pSortableColumn]="frequency">
                   Frequency
-                  <p-sortIcon [field]="doneAppointments"></p-sortIcon>
+                  <p-sortIcon [field]="frequency"></p-sortIcon>
                 </th>
-                <th [pSortableColumn]="upcomingAppointments">
+                <th [pSortableColumn]="from">
                   Form
-                  <p-sortIcon [field]="upcomingAppointments"></p-sortIcon>
+                  <p-sortIcon [field]="from"></p-sortIcon>
                 </th>
                 <th></th>
               </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-treatment>
+            <ng-template pTemplate="body" let-prescriptions>
               <tr>
-                <td (click)="show_treatmentDetails(treatment);">
+                <td (click)="show_prescriptionsDetails(prescriptions);">
                   <div class="root-71">
                     <div class=" coin-78">
                       <div class=" imageArea-80">
@@ -61,26 +61,26 @@
                     </div>
                     <div class="ms-Persona-details details-72">
                       <div class="primaryText-73">
-                        <div class="ms-TooltipHost host_a3f87333">{{ treatment.name }}</div>
+                        <div class="ms-TooltipHost host_a3f87333">{{ prescriptions.name }}</div>
                       </div>
                       <div class="secondaryText-74">
-                        <span>{{ treatment.item }}</span>
+                        <span>{{ prescriptions.item }}</span>
                       </div>
                       <div class="tertiaryText-75">
                       </div>
-                      <div class=" optionalText-76">
+                      <div class="optionalText-76">
                       </div>
                     </div>
                   </div>
                 </td>
                 <td>
-                  {{ treatment.dose }}
+                  {{ prescriptions.dose }}
                 </td>
                 <td>
-                  {{ treatment.frequency }}
+                  {{ prescriptions.frequency }}
                 </td>
                 <td>
-                  {{ treatment.from }}
+                  {{ prescriptions.from }}
                 </td>
                 <td class="delete-td">
                   <button type="button" class="delete-button root-90" (click)="isDelete=true">
@@ -96,7 +96,7 @@
       </div>
     </div>
 
-    <p-sidebar [(visible)]="treatment_display" [blockScroll]="true" position="right" styleClass="custom_sidebar ui-sidebar-md"
+    <p-sidebar [(visible)]="prescriptions_display" [blockScroll]="true" position="right" styleClass="custom_sidebar ui-sidebar-md"
       [showCloseIcon]="false" [modal]="true">
       <div class="card custom_card">
         <div class="card-header ui-g ms-CommandBar">

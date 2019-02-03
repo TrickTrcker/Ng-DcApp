@@ -7,12 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PrescriptionsListComponent implements OnInit {
 
-  treatmentData: any = [];
-  treatment_display: boolean = false;
-  isCollapsedTreatmentInfo: boolean = false;
-  isCollapsedAppointments: boolean = true;
+  prescriptionsData: any = [];
+  prescriptions_display: boolean = false;
+  isCollapsedPrescriptionsInfo: boolean = true;
   isDelete: boolean = false;
-  isDeleteAppointment: boolean = false;
   constructor() { }
   collapsed(event: any): void {
     // console.log(event);
@@ -22,10 +20,10 @@ export class PrescriptionsListComponent implements OnInit {
     // console.log(event);
   }
   ngOnInit() {
-    this.loadTreatmentData();
+    this.loadPrescriptionsData();
   }
-  loadTreatmentData() {
-    this.treatmentData = [
+  loadPrescriptionsData() {
+    this.prescriptionsData = [
       {
         name: 'Azithromycin',
         item: '500mg 3X1 capsule',
@@ -49,8 +47,8 @@ export class PrescriptionsListComponent implements OnInit {
       },
     ];
   }
-  show_treatmentDetails(doctor) {
-    this.treatment_display = true;
+  show_prescriptionsDetails(doctor) {
+    this.prescriptions_display = true;
   }
 }
 

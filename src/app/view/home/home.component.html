@@ -1,5 +1,167 @@
-<div class="animated fadeIn">
-  <p>
-    home works!
-  </p>
+<div class="animated fadeIn apexo-body">
+  <div class="row">
+    <div class="ui-g-12 ui-md-12">
+      <h5>Welcome, Dr. Adam Smith</h5>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="ui-g-12 ui-md-12">
+      <div class="chart-wrapper">
+        <canvas baseChart class="chart" [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+          [legend]="barChartLegend" [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      <hr>
+    </div>
+  </div>
+  <div class="row">
+    <div class="ui-g-6 ui-lg-6 ui-md-12 ui-sm-12">
+      <div class="ui-g-12 ui-md-12">
+        <div class="ui-g-12">
+          <h5 class="appointments-table-heading ">Today's Appointments</h5>
+        </div>
+        <div class="ui-g-12 ui-md-12 dca-data-table">
+          <p-table [value]="todayAppointments" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
+            sortMode="single">
+            <ng-template pTemplate="header">
+              <tr>
+                <th [pSortableColumn]="treatment">
+                  Appointment
+                  <p-sortIcon [field]="treatment" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="doctor">
+                  Operators
+                  <p-sortIcon [field]="doctor"></p-sortIcon>
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-todayAppointments>
+              <tr>
+                <td>
+                  <div class="root-71">
+                    <div class=" coin-78">
+                      <div class=" imageArea-80">
+                        <div class="ms-Persona-initials initials-95" aria-hidden="true">
+                          <span>F</span>
+                        </div>
+                        <div class=" image-84" style="width: 40px; height: 40px;">
+                          <img class=" image-85" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="ms-TooltipHost host_a3f87333">{{ todayAppointments.patient }}</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <span>{{ todayAppointments.patient }}</span>
+                      </div>
+                      <div class="tertiaryText-75">
+                      </div>
+                      <div class="optionalText-76">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="root-71">
+                    <div class=" coin-78">
+                      <div class=" imageArea-80">
+                        <div class="initials-83" aria-hidden="true">
+                          <span>F</span>
+                        </div>
+                        <div class=" image-84" style="width: 40px; height: 40px;">
+                          <img class=" image-85" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="host_a3f87333">{{ todayAppointments.doctor }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </div>
+    <div class="ui-g-6 ui-lg-6 ui-md-12 ui-sm-12">
+      <div class="ui-g-12 ui-md-12">
+        <div class="ui-g-12">
+          <h5 class="appointments-table-heading ">Tomorrow's Appointments</h5>
+        </div>
+        <div class="ui-g-12 ui-md-12 dca-data-table">
+          <p-table [value]="tomorrowAppointments" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
+            sortMode="single">
+            <ng-template pTemplate="header">
+              <tr>
+                <th [pSortableColumn]="treament">
+                  Appointment
+                  <p-sortIcon [field]="treatment" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="doctor">
+                  Operators
+                  <p-sortIcon [field]="doctor"></p-sortIcon>
+                </th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-tomorrowAppointments>
+              <tr>
+                <td (click)="show_treatmentDetails(treatment);">
+                  <div class="root-71">
+                    <div class=" coin-78">
+                      <div class=" imageArea-80">
+                        <div class="ms-Persona-initials initials-95" aria-hidden="true">
+                          <span>F</span>
+                        </div>
+                        <div class=" image-84" style="width: 40px; height: 40px;">
+                          <img class=" image-85" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="host_a3f87333">{{ tomorrowAppointments.patient }}</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <span>{{ tomorrowAppointments.treament }}</span>
+                      </div>
+                      <div class="tertiaryText-75">
+                      </div>
+                      <div class="optionalText-76">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  <div class="root-71">
+                    <div class=" coin-78">
+                      <div class=" imageArea-80">
+                        <div class="initials-83" aria-hidden="true">
+                          <span>F</span>
+                        </div>
+                        <div class=" image-84" style="width: 40px; height: 40px;">
+                          <img class=" image-85" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="host_a3f87333">{{ tomorrowAppointments.doctor }}</div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

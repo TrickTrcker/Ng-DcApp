@@ -23,6 +23,16 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 const APP_CONTAINERS = [DefaultLayoutComponent];
 
+//prime cmodules
+import { SidebarModule } from 'primeng/sidebar';
+import { TableModule } from 'primeng/table';
+import { ScrollPanelModule } from 'primeng/scrollpanel';
+import { AccordionModule } from 'primeng/accordion';
+ 
+ 
+
+// Collapse Component
+import { CollapseModule } from 'ngx-bootstrap/collapse';
 @NgModule({
   declarations: [DefaultLayoutComponent, HomeComponent, StatisticsComponent, SettingsComponent],
   imports: [
@@ -37,6 +47,11 @@ const APP_CONTAINERS = [DefaultLayoutComponent];
     BsDropdownModule.forRoot(),
     TabsModule.forRoot(),
     ChartsModule,
+    SidebarModule,
+    TableModule,
+    CollapseModule,
+    ScrollPanelModule,
+    AccordionModule
     
   ]
 })

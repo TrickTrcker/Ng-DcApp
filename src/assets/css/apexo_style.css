@@ -124,9 +124,9 @@ float: right !important;
 .ms-table th.current .sort-indicators {
   float: right
 }
-.ms-table .ui-sortable-column.ui-state-highlight{
+/* .ms-table .ui-sortable-column.ui-state-highlight{
 
-}
+} */
 .ms-table th.current.negative .sort-indicators .negative,
 .ms-table th.current.positive .sort-indicators .positive {
   display: block
@@ -200,7 +200,13 @@ float: right !important;
   box-shadow: 0 0 0 0.1rem rgba(233, 243, 247, 0.25) !important;
   border: 1px;
 } */
-/* .app-footer {
+/* .main .container-fluid {
+  padding: 0 15px !important;
+} */
+.apexo-body{
+  min-height:547px !important;
+}
+.app-footer {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -216,11 +222,12 @@ float: right !important;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 30px !important;
     flex: 0 0 30px !important;
-    position: fixed !important;
+    /* position: fixed !important; */
     bottom: 0 !important;
-    width: 100% !important;
+    /* width: 100% !important; */
+    height: 50px !important;
     z-index: 2600;
-} */
+}
 .doctor-table-initial
 {
     float: left;
@@ -737,4 +744,36 @@ background-color: #fff !important;
 .appointment-thumbnail-component .appointment-patient-link i {
   display: none
 } 
- 
+.appointments-table-heading {
+  background: #fff;
+  margin: 0;
+  margin-top: 15px;
+  padding: 12px;
+}
+h1, h2, h3, h4, h5,h6 {
+  font-weight: 100;
+}
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+.iconContainer-65 {
+  /* display: flex;
+  flex-direction: column; */
+  justify-content: left;
+  flex-shrink: 0;
+  /* font-size: 16px; */
+  /* width: 32px; */
+  text-align: center;
+  color: rgb(0, 120, 212);
+  cursor: text;
+  transition: width 0.167s ease 0s;
+}
+/* .main{
+  height: 615px !important;
+} */
