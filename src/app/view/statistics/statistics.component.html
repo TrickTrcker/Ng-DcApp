@@ -1,4 +1,195 @@
-<div class="animated fadeIn apexo-body"><p>
-  statistics works!
-</p>
+<div class="animated fadeIn apexo-body">
+  <div class="row statistics-component">
+    <div class="form-group col-lg-4 col-md-4 col-sm-4">
+      <label for="doctor">Doctor:</label>
+      <input class="form-control" id="doctor" placeholder="" type="text">
+    </div>
+    <div class="form-group col-lg-4 col-md-4 col-sm-4">
+      <label for="doctor">From:</label>
+      <input class="form-control" id="doctor" placeholder="" type="date">
+    </div>
+    <div class="form-group col-lg-4 col-md-4 col-sm-4">
+      <label for="doctor">To</label>
+      <input class="form-control" id="doctor" placeholder="" type="date">
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card cl-section">
+        <div class="card-header" (click)="isCollapsedQuickStats = !isCollapsedQuickStats">
+          Quick stats
+          <div class="card-header-actions">
+            <i [ngClass]="{'icon-arrow-down': isCollapsedQuickStats, 'icon-arrow-up': !isCollapsedQuickStats}" class="icons font-1xl d-block mt-0"></i>
+          </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedQuickStats">
+          <div class="row">
+            <div class="col-sm-3"><label>Appointments: <span class="apexo-label primary ">10</span></label></div>
+            <div class="col-sm-3"><label>Payments: <span class="apexo-label warning ">&#8377;0</span></label></div>
+            <div class="col-sm-3"><label>Expenses: <span class="apexo-label danger ">&#8377;143</span></label></div>
+            <div class="col-sm-3"><label>Profits: <span class="apexo-label success ">&#8377;-143</span></label></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card cl-section">
+        <div class="card-header" (click)="isCollapsedAppointments = !isCollapsedAppointments">
+          Appointments By Date
+          <div class="card-header-actions">
+            <i [ngClass]="{'icon-arrow-down': isCollapsedAppointments, 'icon-arrow-up': !isCollapsedAppointments}"
+              class="icons font-1xl d-block mt-0"></i>
+          </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedAppointments">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [datasets]="barChartAppointmentsData" [labels]="barChartAppointmentsLabels"
+              [options]="barChartAppointmentsOptions" [legend]="barChartAppointmentsLegend" [chartType]="barChartAppointmentsType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card cl-section">
+        <div class="card-header" (click)="isCollapsedFinances = !isCollapsedFinances">
+          Finances by date
+          <div class="card-header-actions">
+            <i [ngClass]="{'icon-arrow-down': isCollapsedFinances, 'icon-arrow-up': !isCollapsedFinances}" class="icons font-1xl d-block mt-0"></i>
+          </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedFinances">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [datasets]="barChartFinancesData" [labels]="barChartFinancesLabels"
+              [options]="barChartFinancesOptions" [legend]="barChartFinancesLegend" [chartType]="barChartFinancesType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div> <br />
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="card cl-section">
+        <div class="card-header" (click)="isCollapsedTreatments = !isCollapsedTreatments">
+          Treatments
+          <div class="card-header-actions">
+            <i [ngClass]="{'icon-arrow-down': isCollapsedTreatments, 'icon-arrow-up': !isCollapsedTreatments}" class="icons font-1xl d-block mt-0"></i>
+          </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedTreatments">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [datasets]="barChartTreatmentsData" [labels]="barChartTreatmentsLabels"
+              [options]="barChartTreatmentsOptions" [legend]="barChartTreatmentsLegend" [chartType]="barChartTreatmentsType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="card cl-section">
+        <div class="card-header" (click)="isCollapsedAppliedTreatments = !isCollapsedAppliedTreatments">
+          Most Applied Treatments
+          <div class="card-header-actions">
+            <i [ngClass]="{'icon-arrow-down': isCollapsedAppliedTreatments, 'icon-arrow-up': !isCollapsedAppliedTreatments}"
+              class="icons font-1xl d-block mt-0"></i>
+          </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedAppliedTreatments">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [data]="pieChartAppliedTreatmentsData" [labels]="pieChartAppliedTreatmentsLabels"
+              [chartType]="pieChartAppliedTreatmentsType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="card cl-section">
+        <div class="card-header" (click)="isCollapsedPatientsGender = !isCollapsedPatientsGender">
+          Patients' Gender
+          <div class="card-header-actions">
+            <i [ngClass]="{'icon-arrow-down': isCollapsedPatientsGender, 'icon-arrow-up': !isCollapsedPatientsGender}"
+              class="icons font-1xl d-block mt-0"></i>
+          </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPatientsGender">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [data]="pieChartPatientsData" [labels]="pieChartPatientsLabels" [chartType]="pieChartPatientsType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="card cl-section">
+        <div class="card-header" (click)="isCollapsedPatientsAge = !isCollapsedPatientsAge">
+          Patients' Age
+          <div class="card-header-actions">
+            <i [ngClass]="{'icon-arrow-down': isCollapsedPatientsAge, 'icon-arrow-up': !isCollapsedPatientsAge}" class="icons font-1xl d-block mt-0"></i>
+          </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPatientsAge">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [datasets]="barChartPatientsData" [labels]="barChartPatientsLabels"
+              [options]="barChartPatientsOptions" [legend]="barChartPatientsLegend" [chartType]="barChartPatientsType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="card cl-section">
+        <div class="card-header" (click)="isCollapsedTreatmentsbygender = !isCollapsedTreatmentsbygender">
+          Treatments by gender
+          <div class="card-header-actions">
+            <i [ngClass]="{'icon-arrow-down': isCollapsedTreatmentsbygender, 'icon-arrow-up': !isCollapsedTreatmentsbygender}"
+              class="icons font-1xl d-block mt-0"></i>
+          </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedTreatmentsbygender">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [datasets]="barChartTreatmentsbygendersData" [labels]="barChartTreatmentsbygendersLabels"
+              [options]="barChartTreatmentsbygendersOptions" [legend]="barChartTreatmentsbygendersLegend" [chartType]="barChartTreatmentsbygendersType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="card cl-section">
+        <div class="card-header" (click)="isCollapsedInvolvedTeeth = !isCollapsedInvolvedTeeth">
+          Most Involved Teeth
+          <div class="card-header-actions">
+            <i [ngClass]="{'icon-arrow-down': isCollapsedInvolvedTeeth, 'icon-arrow-up': !isCollapsedInvolvedTeeth}"
+              class="icons font-1xl d-block mt-0"></i>
+          </div>
+        </div>
+        <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedInvolvedTeeth">
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [data]="pieChartTeethData" [labels]="pieChartTeethLabels" [chartType]="pieChartTeethType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <hr>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

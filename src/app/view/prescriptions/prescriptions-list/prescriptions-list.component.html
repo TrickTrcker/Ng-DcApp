@@ -1,18 +1,17 @@
 <div class="animated fadeIn apexo-body">
   <div class="row">
-    <div class="ui-g-12 ui-lg-12 ui-md-12 ui-sm-12">
-      <div class="ui-g-12 ui-md-12">
-        <div class="ui-g-12">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
           <div class="ms-CommandBar">
             <div class="input-group">
-              <div class="input-group-prepend ui-lg-10 ui-md-8 ui-sm-6">
+              <div class="input-group-prepend ui-lg-9 ui-md-8 ui-sm-6 iconContainer-65">
                 <button type="button" class="btn btn-light  btn-sm apex-btn" (click)="doctordetails_display=true">
                   <i class="icon-plus icons font-lg"></i>
                   Add New</button>
               </div>
-              <div class="input-group-prepend ui-lg-2 ui-md-4 ui-sm-6">
-                <button type="button" class="btn btn-light  btn-sm apex-btn ">
-                  <!-- <i class="fa fa-search"></i> -->
+              <div class="input-group-prepend ui-lg-3 ui-md-4 ui-sm-6">
+                <button type="button" class="btn btn-light  btn-sm apex-btn">
                   <i class="icon-magnifier icons font-lg d-block mt-0"></i>
                 </button>
                 <input type="text" class="field-68" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
@@ -20,7 +19,8 @@
             </div>
           </div>
         </div>
-        <div class="ui-g-12 ui-md-12 dca-data-table">
+        <br />
+        <div class="col-lg-12 col-md-12 col-sm-12">
           <p-table [value]="prescriptionsData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
             sortMode="single">
             <ng-template pTemplate="header">

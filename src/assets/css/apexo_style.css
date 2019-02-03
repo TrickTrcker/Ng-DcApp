@@ -777,3 +777,47 @@ h3 {
 /* .main{
   height: 615px !important;
 } */
+.statistics-component{
+  padding: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,.1);
+  background: #fff;
+} 
+.cl-section .card-header {  
+  background: #fff;
+  margin-top: 0px;
+  padding: 15px;
+  border-radius: 3px !important; 
+  position: relative; 
+  color: #757575;
+   
+}
+.cl-section label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #757575;
+  display: block;
+  text-align: center;
+}
+.apexo-label {
+  background: #212121;
+  padding: 5px 10px 7px;
+  color: #fff;
+  border-radius: 2px;
+  font-size: 13px;
+  margin-right: 3px;
+  margin-bottom: 3px;
+  display: inline-block;
+  box-shadow: 0 10px 30px rgba(0,0,0,.15);
+}
+.apexo-label.primary {
+  background: #3f51b5;
+}
+.apexo-label.warning {
+  background: #fb8c00;
+}
+.apexo-label.danger {
+  background: #f44336;
+}
+.apexo-label.success {
+  background: #4caf50;
+}
