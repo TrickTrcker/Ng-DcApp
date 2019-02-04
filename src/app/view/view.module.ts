@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { ViewRoutingModule } from './view-routing.module';
 import { DefaultLayoutComponent } from './default-layout.component';
@@ -15,7 +16,10 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TabsModule } from 'ngx-bootstrap/tabs';
 import { ChartsModule } from 'ng2-charts/ng2-charts';
-import { AppAsideModule, AppBreadcrumbModule, AppHeaderModule, AppFooterModule, AppSidebarModule, } from '@coreui/angular'; 
+import { AppAsideModule, AppBreadcrumbModule, AppHeaderModule, AppFooterModule, AppSidebarModule, } from '@coreui/angular';
+
+//primeng components
+
 
 
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
@@ -23,13 +27,14 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
 };
 const APP_CONTAINERS = [DefaultLayoutComponent];
 
-//prime cmodules
+//primeng components
 import { SidebarModule } from 'primeng/sidebar';
 import { TableModule } from 'primeng/table';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { AccordionModule } from 'primeng/accordion';
- 
- 
+import { EditorModule } from 'primeng/editor';
+
+
 
 // Collapse Component
 import { CollapseModule } from 'ngx-bootstrap/collapse';
@@ -37,6 +42,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
   declarations: [DefaultLayoutComponent, HomeComponent, StatisticsComponent, SettingsComponent],
   imports: [
     CommonModule,
+    FormsModule,
     ViewRoutingModule,
     AppAsideModule,
     AppBreadcrumbModule.forRoot(),
@@ -51,8 +57,8 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     TableModule,
     CollapseModule,
     ScrollPanelModule,
-    AccordionModule
-    
+    AccordionModule,
+    EditorModule    
   ]
 })
 export class ViewModule { }
