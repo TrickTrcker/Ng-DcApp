@@ -1,4 +1,116 @@
-<div class="animated fadeIn apexo-body"><p>
-  patient-report works!
-</p>
+<div class="animated fadeIn apexo-body">
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <div class="col-lg-12 col-md-12 col-sm-12">
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <!-- <div class="ms-CommandBar">
+            <div class="input-group">
+              <div class="input-group-prepend ui-lg-9 ui-md-8 ui-sm-6 iconContainer-65">
+                <button type="button" class="btn btn-light  btn-sm apex-btn" (click)="doctordetails_display=true">
+                  <i class="icon-plus icons font-lg"></i>
+                  Add New</button>
+              </div>
+              <div class="input-group-prepend ui-lg-3 ui-md-4 ui-sm-6">
+                <button type="button" class="btn btn-light  btn-sm apex-btn">
+                  <i class="icon-magnifier icons font-lg d-block mt-0"></i>
+                </button>
+                <input type="text" class="field-68" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+              </div>
+            </div>
+          </div> -->
+          <div class="row statistics-component">
+            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+              <label for="doctor">Doctor:</label>
+              <input class="form-control" id="doctor" placeholder="" type="text">
+            </div>
+            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+              <label for="doctor">From:</label>
+              <input class="form-control" id="doctor" placeholder="" type="date">
+            </div>
+            <div class="form-group col-lg-4 col-md-4 col-sm-4">
+              <label for="doctor">To</label>
+              <input class="form-control" id="doctor" placeholder="" type="date">
+            </div>
+          </div>
+          <br />
+        </div>
+        <br />
+        <div class="col-lg-12 col-md-12 col-sm-12 dca-data-table">
+          <p-table [value]="prescriptionsData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
+            sortMode="single">
+            <ng-template pTemplate="header">
+              <tr>
+                <th [pSortableColumn]="name">
+                  Item name
+                  <p-sortIcon [field]="name" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="dose">
+                  Dose
+                  <p-sortIcon [field]="dose"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="frequency">
+                  Frequency
+                  <p-sortIcon [field]="frequency"></p-sortIcon>
+                </th>
+                <th [pSortableColumn]="from">
+                  Form
+                  <p-sortIcon [field]="from"></p-sortIcon>
+                </th>
+                <th></th>
+              </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-prescriptions>
+              <tr>
+                <td (click)="show_prescriptionsDetails(prescriptions);">
+                  <div class="root-71">
+                    <div class=" coin-78">
+                      <div class=" imageArea-80">
+                        <div class="ms-Persona-initials initials-95" aria-hidden="true">
+                          <span>F</span>
+                        </div>
+                        <div class=" image-84" style="width: 40px; height: 40px;">
+                          <img class=" image-85" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="ms-TooltipHost host_a3f87333">{{ prescriptions.name }}</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <span>{{ prescriptions.item }}</span>
+                      </div>
+                      <div class="tertiaryText-75">
+                      </div>
+                      <div class="optionalText-76">
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <td>
+                  {{ prescriptions.dose }}
+                </td>
+                <td>
+                  {{ prescriptions.frequency }}
+                </td>
+                <td>
+                  {{ prescriptions.from }}
+                </td>
+                <td class="delete-td">
+                  <button type="button" class="delete-button root-90" (click)="isDelete=true">
+                    <div class="flexContainer-55">
+                      <i class="cui-trash icons font-lg d-block mt-0"></i>
+                    </div>
+                  </button>
+                </td>
+              </tr>
+            </ng-template>
+          </p-table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
 </div>
