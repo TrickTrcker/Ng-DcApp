@@ -21,7 +21,7 @@
         </div>
         <br />
         <div class="col-lg-12 col-md-12 col-sm-12 dca-data-table">
-          <p-table [value]="treatmentData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
+          <p-table [value]="PaymentData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
             sortMode="single">
             <ng-template pTemplate="header">
               <tr>
@@ -103,7 +103,7 @@
       </div>
     </div>
 
-    <p-sidebar [(visible)]="treatment_display" [blockScroll]="true" position="right" styleClass="custom_sidebar ui-sidebar-md"
+    <p-sidebar [(visible)]="Payment_display" [blockScroll]="true" position="right" styleClass="custom_sidebar ui-sidebar-md"
       [showCloseIcon]="false" [modal]="true">
       <div class="card custom_card">
         <div class="card-header ui-g ms-CommandBar">
@@ -143,15 +143,15 @@
         <p-scrollPanel [style]="{width: '100%', height: '650px'}">
           <div class="card-body">
             <div class="card">
-              <div class="card-header" (click)="isCollapsedTreatmentInfo = !isCollapsedTreatmentInfo">
+              <div class="card-header" (click)="isCollapsedPaymentInfo = !isCollapsedPaymentInfo">
                 Payment
                 <div class="card-header-actions">
                   <!-- <i class="icon-arrow-down icons font-1xl d-block mt-0"></i> -->
-                  <i [ngClass]="{'icon-arrow-down': isCollapsedTreatmentInfo, 'icon-arrow-up': !isCollapsedTreatmentInfo}"
+                  <i [ngClass]="{'icon-arrow-down': isCollapsedPaymentInfo, 'icon-arrow-up': !isCollapsedPaymentInfo}"
                     class="icons font-1xl d-block mt-0"></i>
                 </div>
               </div>
-              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedTreatmentInfo">
+              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPaymentInfo">
                 <div class="form-group row">
                   <label class="col-md-4 col-form-label" for="text-input">Treatment</label>
                   <div class="col-md-8">
@@ -211,6 +211,97 @@
               </div>
             </div>
           </div>
+          <div class="card">
+            <div class="card-header" (click)="isCollapsedPaymentHistory = !isCollapsedPaymentHistory">
+              Payment History
+              <div class="card-header-actions">
+                <i [ngClass]="{'icon-arrow-down': isCollapsedPaymentHistory, 'icon-arrow-up': !isCollapsedPaymentHistory}"
+                  class="icons font-1xl d-block mt-0"></i>
+              </div>
+            </div>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPaymentHistory">
+              <div class="form-group">
+                <label for="doctor">Filter</label>
+                <input class="form-control" id="doctor" placeholder="search" type="text">
+              </div>
+              <hr>
+              <p style="text-align: right; font-size: 13px; color: rgb(158, 158, 158);">Results: 10 out of 10</p>
+              <div class="appointment-thumbnail-component labeled missed clickable">
+                <div class="m-b-5">
+                  <div class="root-71">
+                    <div class="coin-78">
+                      <div class="ms-Persona-imageArea imageArea-80">
+                        <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
+                        <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                            alt=""></div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="host_a3f87333">Amalgam C II</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <div class="host_a3f87333">14 days ago</div>
+                      </div>
+                      <div class="tertiaryText-75"></div>
+                      <div class="optionalText-76"></div>
+                    </div>
+                  </div>
+                </div>
+                <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
+              </div>
+              <div class="appointment-thumbnail-component labeled missed clickable">
+                <div class="m-b-5">
+                  <div class="root-71">
+                    <div class="coin-78">
+                      <div class="ms-Persona-imageArea imageArea-80">
+                        <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
+                        <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                            alt=""></div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="host_a3f87333">Amalgam C II</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <div class="host_a3f87333">14 days ago</div>
+                      </div>
+                      <div class="tertiaryText-75"></div>
+                      <div class="optionalText-76"></div>
+                    </div>
+                  </div>
+                </div>
+                <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
+              </div>
+              <div class="appointment-thumbnail-component labeled missed clickable">
+                <div class="m-b-5">
+                  <div class="root-71">
+                    <div class="coin-78">
+                      <div class="ms-Persona-imageArea imageArea-80">
+                        <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
+                        <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                            alt=""></div>
+                      </div>
+                    </div>
+                    <div class="ms-Persona-details details-72">
+                      <div class="primaryText-73">
+                        <div class="host_a3f87333">Amalgam C II</div>
+                      </div>
+                      <div class="secondaryText-74">
+                        <div class="host_a3f87333">14 days ago</div>
+                      </div>
+                      <div class="tertiaryText-75"></div>
+                      <div class="optionalText-76"></div>
+                    </div>
+                  </div>
+                </div>
+                <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
+              </div>
+            </div>
+          </div>
+          <br />
+          <br />
         </p-scrollPanel>
       </div>
     </p-sidebar>

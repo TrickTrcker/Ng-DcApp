@@ -35,74 +35,115 @@
           <br />
         </div>
         <br />
+        <div class="col-lg-12 col-md-12 col-sm-12">
+          <div class="statistics-component">
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2">
+                <label class="float-right font-weight-bold">System of Madicine :</label>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3">
+                <label class="float-left">Clinic / Consulting Room</label>
+              </div>
+              <div class="col-lg-5 col-md-5 col-sm-5">
+                <label class="float-right font-weight-bold">Tamil Nadu Clinical Establisment Reglation Act Registration
+                  No. :</label>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2">
+                <label class="float-left">xxxxxxxx</label>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col-lg-2 col-md-2 col-sm-2">
+                <label class="float-right font-weight-bold">Name of the Doctor :</label>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <label class="float-left">xxxxxxxxxx</label>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-4">
+                <label class="float-right font-weight-bold">Date :</label>
+              </div>
+              <div class="col-lg-2 col-md-2 col-sm-2">
+                <label class="float-left">17/02/2019</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
         <div class="col-lg-12 col-md-12 col-sm-12 dca-data-table">
           <p-table [value]="prescriptionsData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
             sortMode="single">
             <ng-template pTemplate="header">
-              <tr>
-                <th [pSortableColumn]="name">
-                  Item name
-                  <p-sortIcon [field]="name" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
-                    ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
+              <tr class="text-center text-capitalize">
+                <th>Serial No</th>
+                <th>Name of the Patient and address</th>
+                <th>
+                  <p>
+                    Mobiles No. / Contect No. if available
+                  </p>
                 </th>
-                <th [pSortableColumn]="dose">
-                  Dose
-                  <p-sortIcon [field]="dose"></p-sortIcon>
-                </th>
-                <th [pSortableColumn]="frequency">
-                  Frequency
-                  <p-sortIcon [field]="frequency"></p-sortIcon>
-                </th>
-                <th [pSortableColumn]="from">
-                  Form
-                  <p-sortIcon [field]="from"></p-sortIcon>
-                </th>
-                <th></th>
+                <th>Age</th>
+                <th>Sex</th>
+                <th>Provisional Diagnosis</th>
+                <th>Investigations if any</th>
+                <th>Final diagnosis</th>
+                <th>Treatment</th>
+                <th>Result Cured / Same condition / Referred / Expired</th>
+                <th>Additional information if any</th>
+                <th>Initial of the Medical officer</th>
+              </tr>
+              <tr class="text-center">
+                <td>(1)</td>
+                <td>(2)</td>
+                <td>(3)</td>
+                <td>(4)</td>
+                <td>(5)</td>
+                <td>(6)</td>
+                <td>(7)</td>
+                <td>(8)</td>
+                <td>(9)</td>
+                <td>(10)</td>
+                <td>(11)</td>
+                <td>(12)</td>
               </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-prescriptions>
+            <ng-template pTemplate="body" let-prescriptions let-rowIndex="rowIndex">
               <tr>
-                <td (click)="show_prescriptionsDetails(prescriptions);">
-                  <div class="root-71">
-                    <div class=" coin-78">
-                      <div class=" imageArea-80">
-                        <div class="ms-Persona-initials initials-95" aria-hidden="true">
-                          <span>F</span>
-                        </div>
-                        <div class=" image-84" style="width: 40px; height: 40px;">
-                          <img class=" image-85" alt="">
-                        </div>
-                      </div>
-                    </div>
-                    <div class="ms-Persona-details details-72">
-                      <div class="primaryText-73">
-                        <div class="ms-TooltipHost host_a3f87333">{{ prescriptions.name }}</div>
-                      </div>
-                      <div class="secondaryText-74">
-                        <span>{{ prescriptions.item }}</span>
-                      </div>
-                      <div class="tertiaryText-75">
-                      </div>
-                      <div class="optionalText-76">
-                      </div>
-                    </div>
-                  </div>
+                <td class="text-center">
+                  {{ rowIndex+1 }}.
                 </td>
                 <td>
-                  {{ prescriptions.dose }}
+                  <!-- {{ prescriptions.dose }} -->
                 </td>
                 <td>
-                  {{ prescriptions.frequency }}
+                  <!-- {{ prescriptions.frequency }} -->
                 </td>
                 <td>
-                  {{ prescriptions.from }}
+                  <!-- {{ prescriptions.from }} -->
                 </td>
-                <td class="delete-td">
-                  <button type="button" class="delete-button root-90" (click)="isDelete=true">
-                    <div class="flexContainer-55">
-                      <i class="cui-trash icons font-lg d-block mt-0"></i>
-                    </div>
-                  </button>
+                <td>
+                  <!-- {{ prescriptions.dose }} -->
+                </td>
+                <td>
+                  <!-- {{ prescriptions.dose }} -->
+                </td>
+                <td>
+                  <!-- {{ prescriptions.dose }} -->
+                </td>
+                <td>
+                  <!-- {{ prescriptions.dose }} -->
+                </td>
+                <td>
+                  <!-- {{ prescriptions.dose }} -->
+                </td>
+                <td>
+                  <!-- {{ prescriptions.dose }} -->
+                </td>
+                <td>
+                  <!-- {{ prescriptions.dose }} -->
+                </td>
+                <td>
+                  <!-- {{ prescriptions.dose }} -->
                 </td>
               </tr>
             </ng-template>

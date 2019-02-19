@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./payments-list.component.scss']
 })
 export class PaymentsListComponent implements OnInit {
-  treatmentData: any = [];
-  treatment_display: boolean = false;
-  isCollapsedTreatmentInfo: boolean = false;
-  isCollapsedAppointments: boolean = true;
+  PaymentData: any = [];
+  Payment_display: boolean = false;
+  isCollapsedPaymentInfo: boolean = false;
+  isCollapsedPaymentHistory: boolean = true;
   isDelete: boolean = false;
   isDeleteAppointment: boolean = false;
   constructor() { }
@@ -24,7 +24,7 @@ export class PaymentsListComponent implements OnInit {
     this.loadTreatmentData();
   }
   loadTreatmentData() {
-    this.treatmentData = [
+    this.PaymentData = [
       {
         treatment: 'Teeth Whitening',
         unit: 'unit: $5 per unit',
@@ -97,6 +97,6 @@ export class PaymentsListComponent implements OnInit {
     ];
   }
   show_treatmentDetails(doctor) {
-    this.treatment_display = true;
+    this.Payment_display = true;
   }
 }
