@@ -37,7 +37,7 @@ export class AppointmentsListComponent implements OnInit {
   selectedTreatment: any;
   selectedItem: any = [];
   appointment_display: boolean = false;
-  isCollapsedAppointmentInfo: boolean = true;
+  isCollapsedAppointmentInfo: boolean = false;
   isCollapsedCaseDetails: boolean = false;
   isCollapsedPrice: boolean = false;
   isDelete: boolean = false;

@@ -9,11 +9,12 @@ import { EditorModule } from 'primeng/editor';
 export class SettingsComponent implements OnInit {
   createAccountEmail: any;
   forgotAccountEmail: any;
-  constructor() { }
+  allowPatient: boolean = false;
+constructor() { }
 
-  ngOnInit() {
-    this.createAccountEmail = "<div>Hello welcome to <b>Thenu Dental Hospital</b> </div><div>Powered by <b>TrickTrcker</b></div><div><br></div>";
-    this.forgotAccountEmail = "<div>Hello welcome to <b>Thenu Dental Hospital</b> </div><div>Powered by <b>TrickTrcker</b></div><div><br></div>";
-  }
+ngOnInit() {
+  this.createAccountEmail = "<div>Hello welcome to <b>Thenu Dental Hospital</b> </div><div>Powered by <b>TrickTrcker</b></div><div><br></div>";
+  this.forgotAccountEmail = "<div>Hello welcome to <b>Thenu Dental Hospital</b> </div><div>Powered by <b>TrickTrcker</b></div><div><br></div>";
+}
 
 }

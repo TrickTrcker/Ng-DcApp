@@ -737,6 +737,20 @@ background-color: #fff !important;
   content: "FUTURE";
   background: #dcedc8
 }
+.appointment-thumbnail-component.labeled.paid {
+  border-color: #d1c4e9
+}
+.appointment-thumbnail-component.labeled.paid:before {
+  content: "PAID";
+  background: #dcedc8
+}
+.appointment-thumbnail-component.labeled.unpaid {
+  border-color: #d1c4e9
+}
+.appointment-thumbnail-component.labeled.unpaid:before {
+  content: "UNPAID";
+  background: #dcedc8
+}
 
 .appointment-thumbnail-component .appointment-patient-link {
   display: inline-block;

@@ -21,79 +21,67 @@ export class PaymentsListComponent implements OnInit {
     // console.log(event);
   }
   ngOnInit() {
-    this.loadTreatmentData();
+    this.loadPaymentData();
   }
-  loadTreatmentData() {
+  loadPaymentData() {
     this.PaymentData = [
       {
+        patient: 'vel',
+        date: '10-12-2019',
         treatment: 'Teeth Whitening',
-        unit: 'unit: $5 per unit',
-        expenses: '$5 ',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
+        balance: 'Rs. 500 ',
+        amount: 'Rs. 500 ',
+        status: 'Paid'
       },
       {
+        patient: 'vel kumar',
+        date: '10-12-2019',
         treatment: 'Rx Only',
-        unit: 'unit: $5 per unit',
-        expenses: '$5 ',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
+        balance: 'Rs. 100 ',
+        amount: 'Rs. 1000 ',
+        status: 'Unpaid'
       },
       {
+        patient: 'vel murugan',
+        date: '10-12-2019',
         treatment: 'XRay - Bitewing',
-        unit: 'unit: $5 per unit',
-        expenses: '$5 ',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
+        balance: 'Rs. 100 ',
+        amount: 'Rs. 400 ',
+        status: 'Paid'
       },
       {
+        patient: 'ravi',
+        date: '10-12-2019',
         treatment: 'Amalgam C II',
-        unit: 'unit: $5 per unit',
-        expenses: '$5 ',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
+        balance: 'Rs. 500 ',
+        amount: 'Rs. 50 ',
+        status: 'Paid'
       },
       {
+        patient: 'sivanadan',
+        date: '10-12-2019',
         treatment: 'Composite C III',
-        unit: 'unit: $5 per unit',
-        expenses: '$5 ',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
+        balance: 'Rs. 50 ',
+        amount: 'Rs. 50 ',
+        status: 'Unpaid'
+      },
+
+      {
+        patient: 'sivaganesh',
+        date: '10-12-2019',
+        treatment: 'Composite C III',
+        balance: 'Rs. 50 ',
+        amount: 'Rs. 50 ',
+        status: 'Unpaid'
       },
       {
-        ntreatmentame: 'XRay - Occlusal',
-        unit: 'unit: $5 per unit',
-        expenses: '$5 ',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
-      }, {
-        treatment: 'Composite C IV',
-        unit: 'unit: $5 per unit',
-        expenses: '$5 ',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
-      },
-      {
-        treatment: 'XRay - Periapical',
-        unit: 'unit: $5 per unit',
-        expenses: '$5',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
-      },
-      {
-        treatment: 'Crowning',
-        unit: 'unit: $5 per unit',
-        expenses: '$5 ',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
-      },
-      {
-        treatment: 'Scaling and Polishing',
-        unit: 'unit: $5 per unit',
-        expenses: '$5 ',
-        doneAppointments: '10 done',
-        upcomingAppointments: "10 upcoming"
-      },
+        patient: 'siva',
+        date: '10-12-2019',
+        treatment: 'XRay - Occlusal',
+        balance: 'Rs. 50 ',
+        amount: 'Rs. 50 ',
+        status: 'Unpaid'
+      }
     ];
   }
   show_treatmentDetails(doctor) {

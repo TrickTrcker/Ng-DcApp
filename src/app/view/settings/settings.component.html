@@ -8,10 +8,11 @@
           <div class="form-group">
             <div class="input-group-prepend">
               <label class="switch switch-pill switch-label switch-primary">
-                <input type="checkbox" class="switch-input" checked>
+                <input type="checkbox" class="switch-input" [(ngModel)]="allowPatient" checked>
                 <span class="switch-slider" data-checked="Yes" data-unchecked="No"></span>
               </label>
-              <label class="ms-Toggle-stateTex text-142">Allow Patient Access to login</label>
+              <label class="ms-Toggle-stateTex text-142" (click)="allowPatient = !allowPatient">Allow Patient Access to
+                login</label>
             </div>
           </div>
         </div>

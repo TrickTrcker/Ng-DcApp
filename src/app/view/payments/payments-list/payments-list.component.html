@@ -6,9 +6,9 @@
           <div class="ms-CommandBar">
             <div class="input-group">
               <div class="input-group-prepend ui-lg-9 ui-md-8 ui-sm-6 iconContainer-65">
-                <button type="button" class="btn btn-light  btn-sm apex-btn" (click)="doctordetails_display=true">
+                <!-- <button type="button" class="btn btn-light  btn-sm apex-btn" (click)="Payment_display=true">
                   <i class="icon-plus icons font-lg"></i>
-                  Add New</button>
+                  Add New</button> -->
               </div>
               <div class="input-group-prepend ui-lg-3 ui-md-4 ui-sm-6">
                 <button type="button" class="btn btn-light  btn-sm apex-btn">
@@ -49,7 +49,7 @@
                 <th></th>
               </tr>
             </ng-template>
-            <ng-template pTemplate="body" let-treatment>
+            <ng-template pTemplate="body" let-payment>
               <tr>
                 <td (click)="show_treatmentDetails(treatment);">
                   <div class="root-71">
@@ -65,10 +65,10 @@
                     </div>
                     <div class="ms-Persona-details details-72">
                       <div class="primaryText-73">
-                        <div class="ms-TooltipHost host_a3f87333">{{ treatment.treatment }}</div>
+                        <div class="ms-TooltipHost host_a3f87333">{{ payment.patient }}</div>
                       </div>
                       <div class="secondaryText-74">
-                        <span>{{ treatment.unit }}</span>
+                        <span>{{ payment.date }}</span>
                       </div>
                       <div class="tertiaryText-75">
                       </div>
@@ -78,16 +78,16 @@
                   </div>
                 </td>
                 <td>
-                  {{ treatment.expenses }}
+                  {{ payment.treatment }}
                 </td>
                 <td>
-                  {{ treatment.doneAppointments }}
+                  {{ payment.balance }}
                 </td>
                 <td>
-                  {{ treatment.upcomingAppointments }}
+                  {{ payment.amount }}
                 </td>
                 <td>
-                  {{ treatment.upcomingAppointments }}
+                  {{ payment.status }}
                 </td>
                 <td class="delete-td">
                   <button type="button" class="delete-button root-90" (click)="isDelete=true">
@@ -132,7 +132,7 @@
                 </div>
               </div>
               <span class="align-middle float-right">
-                <button type="button" (click)="treatment_display=false" class="close" aria-label="Close">
+                <button type="button" (click)="Payment_display=false" class="close" aria-label="Close">
                   <span style="font-size: 25px" aria-hidden="true">&times;</span>
                 </button>
               </span>
@@ -210,93 +210,93 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="card">
-            <div class="card-header" (click)="isCollapsedPaymentHistory = !isCollapsedPaymentHistory">
-              Payment History
-              <div class="card-header-actions">
-                <i [ngClass]="{'icon-arrow-down': isCollapsedPaymentHistory, 'icon-arrow-up': !isCollapsedPaymentHistory}"
-                  class="icons font-1xl d-block mt-0"></i>
+            <div class="card">
+              <div class="card-header" (click)="isCollapsedPaymentHistory = !isCollapsedPaymentHistory">
+                Payment History
+                <div class="card-header-actions">
+                  <i [ngClass]="{'icon-arrow-down': isCollapsedPaymentHistory, 'icon-arrow-up': !isCollapsedPaymentHistory}"
+                    class="icons font-1xl d-block mt-0"></i>
+                </div>
               </div>
-            </div>
-            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPaymentHistory">
-              <div class="form-group">
-                <label for="doctor">Filter</label>
-                <input class="form-control" id="doctor" placeholder="search" type="text">
-              </div>
-              <hr>
-              <p style="text-align: right; font-size: 13px; color: rgb(158, 158, 158);">Results: 10 out of 10</p>
-              <div class="appointment-thumbnail-component labeled missed clickable">
-                <div class="m-b-5">
-                  <div class="root-71">
-                    <div class="coin-78">
-                      <div class="ms-Persona-imageArea imageArea-80">
-                        <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
-                        <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
-                            alt=""></div>
+              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPaymentHistory">
+                <div class="form-group">
+                  <label for="doctor">Filter</label>
+                  <input class="form-control" id="doctor" placeholder="search" type="text">
+                </div>
+                <hr>
+                <p style="text-align: right; font-size: 13px; color: rgb(158, 158, 158);">Results: 10 out of 10</p>
+                <div class="appointment-thumbnail-component labeled paid clickable">
+                  <div class="m-b-5">
+                    <div class="root-71">
+                      <div class="coin-78">
+                        <div class="ms-Persona-imageArea imageArea-80">
+                          <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
+                          <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                              alt=""></div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="ms-Persona-details details-72">
-                      <div class="primaryText-73">
-                        <div class="host_a3f87333">Amalgam C II</div>
+                      <div class="ms-Persona-details details-72">
+                        <div class="primaryText-73">
+                          <div class="host_a3f87333">Amalgam C II</div>
+                        </div>
+                        <div class="secondaryText-74">
+                          <div class="host_a3f87333">14 days ago</div>
+                        </div>
+                        <div class="tertiaryText-75"></div>
+                        <div class="optionalText-76"></div>
                       </div>
-                      <div class="secondaryText-74">
-                        <div class="host_a3f87333">14 days ago</div>
-                      </div>
-                      <div class="tertiaryText-75"></div>
-                      <div class="optionalText-76"></div>
                     </div>
                   </div>
+                  <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
                 </div>
-                <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
-              </div>
-              <div class="appointment-thumbnail-component labeled missed clickable">
-                <div class="m-b-5">
-                  <div class="root-71">
-                    <div class="coin-78">
-                      <div class="ms-Persona-imageArea imageArea-80">
-                        <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
-                        <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
-                            alt=""></div>
+                <div class="appointment-thumbnail-component labeled unpaid clickable">
+                  <div class="m-b-5">
+                    <div class="root-71">
+                      <div class="coin-78">
+                        <div class="ms-Persona-imageArea imageArea-80">
+                          <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
+                          <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                              alt=""></div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="ms-Persona-details details-72">
-                      <div class="primaryText-73">
-                        <div class="host_a3f87333">Amalgam C II</div>
+                      <div class="ms-Persona-details details-72">
+                        <div class="primaryText-73">
+                          <div class="host_a3f87333">Amalgam C II</div>
+                        </div>
+                        <div class="secondaryText-74">
+                          <div class="host_a3f87333">14 days ago</div>
+                        </div>
+                        <div class="tertiaryText-75"></div>
+                        <div class="optionalText-76"></div>
                       </div>
-                      <div class="secondaryText-74">
-                        <div class="host_a3f87333">14 days ago</div>
-                      </div>
-                      <div class="tertiaryText-75"></div>
-                      <div class="optionalText-76"></div>
                     </div>
                   </div>
+                  <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
                 </div>
-                <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
-              </div>
-              <div class="appointment-thumbnail-component labeled missed clickable">
-                <div class="m-b-5">
-                  <div class="root-71">
-                    <div class="coin-78">
-                      <div class="ms-Persona-imageArea imageArea-80">
-                        <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
-                        <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
-                            alt=""></div>
+                <div class="appointment-thumbnail-component labeled paid clickable">
+                  <div class="m-b-5">
+                    <div class="root-71">
+                      <div class="coin-78">
+                        <div class="ms-Persona-imageArea imageArea-80">
+                          <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
+                          <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                              alt=""></div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="ms-Persona-details details-72">
-                      <div class="primaryText-73">
-                        <div class="host_a3f87333">Amalgam C II</div>
+                      <div class="ms-Persona-details details-72">
+                        <div class="primaryText-73">
+                          <div class="host_a3f87333">Amalgam C II</div>
+                        </div>
+                        <div class="secondaryText-74">
+                          <div class="host_a3f87333">14 days ago</div>
+                        </div>
+                        <div class="tertiaryText-75"></div>
+                        <div class="optionalText-76"></div>
                       </div>
-                      <div class="secondaryText-74">
-                        <div class="host_a3f87333">14 days ago</div>
-                      </div>
-                      <div class="tertiaryText-75"></div>
-                      <div class="optionalText-76"></div>
                     </div>
                   </div>
+                  <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
                 </div>
-                <i class="delete cui-trash icons font-lg d-block mt-0" (click)="isDeleteAppointment=true"></i>
               </div>
             </div>
           </div>
@@ -308,7 +308,7 @@
     <p-sidebar [(visible)]="isDelete" position="bottom" styleClass="ui-sidebar-sm" [showCloseIcon]="false" [modal]="true"
       [baseZIndex]="10000">
       <div style="overflow-y: auto">
-        <p>Treatment "Teeth Whitening" will deleted</p>
+        <p>Are you sure you want to delete this payment?</p>
         <div style="margin-top: 5px">
           <button class="btn btn-square btn-sm btn-primary" (click)="isDelete=false" type="button">
             <i class="icon-check icons font-lg mt-0"></i>
