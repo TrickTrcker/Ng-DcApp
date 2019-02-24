@@ -93,5 +93,11 @@ export class HomeComponent implements OnInit {
       { data: [28, 48, 40, 19, 86, 27, 90, 65, 59, 84, 68, 56, 55, 40, 65, 59, 80, 81, 58, 55, 40, 65, 59, 80, 81, 56, 57, 40, 54, 40, 44, 86], label: 'Outstanding' }
     ];
   }
+  chartClicked(event) {
+
+  }
+  chartHovered(event) {
+
+  }
 }
 

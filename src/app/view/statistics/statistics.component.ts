@@ -162,4 +162,10 @@ export class StatisticsComponent implements OnInit {
       { data: [], label: 'Applied times' }
     ];
   }
+  chartClicked(event) {
+
+  }
+  chartHovered(event) {
+
+  }
 }

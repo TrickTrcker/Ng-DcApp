@@ -113,7 +113,7 @@ export class PatientsListComponent implements OnInit {
       },
     ];
   }
-  show_patientDetails(doctor) {
+  show_patientDetails(doctor?) {
     this.doctordetails_display = true;
   }
 }
