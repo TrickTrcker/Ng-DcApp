@@ -402,7 +402,7 @@ background-color: #fff !important;
   border-radius: 50%;
 }
 .ms-Persona-initials {
-  border-radius: 0;
+  border-radius: 0 !important;
   font-size: 14px;
 }
 .coin-78 {
@@ -877,4 +877,344 @@ h6 {
 .ms-Toggle-stateText {
   position: relative;
   top: 2px;
+} 
+
+.appointments-style .card-header {  
+  background: #fff;
+  margin-top: 0px;
+  padding: 5px 10px 5px 10px;
+  border-radius: 3px !important; 
+  position: relative; 
+  color: #757575;   
 }
+.appointments-style label {
+  font-size: 13px;
+  margin-bottom: 5px;
+  color: #757575;
+  display: block;
+  text-align: center;
+}
+.insight{
+  font-size: 12px;
+}
+.insight span.num-3 {
+  background: #ef9a9a;
+}
+.insight span {
+  padding: 2px 7px 3px;
+  border-radius: 20px;
+  background: #b71c1c;
+}
+.appointments .ui-listbox {
+  padding: 0 !important;
+  min-width: 33em !important; 
+  background: #ffffff !important;
+  border: 1px solid #a6a6a6 !important;
+}
+ 
+.tag-input-component {
+  position: relative;
+  background: #fff;
+  padding: 3px 5px;
+  font-size: 13px;
+  border: 1px solid #a6a6a6;
+}
+.contentInner_dafe1696 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  /* -webkit-transform: translateZ(0); */
+  /* transform: translateZ(0); */
+}
+.appointment-input .prescription .item {
+  display: none;
+}
+.tag-input-component .item {
+  background: #eee;
+  padding: 5px;
+  display: inline-block;
+  margin-right: 5px;
+  margin-top: 5px;
+}
+ 
+.root_dafe1696 {
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.content-107 {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgb(51, 51, 51);
+  visibility: visible;
+}
+
+
+
+.print-heading {
+  display: none;
+}
+.ant-col-20 {
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 83.33333333%;
+}
+.ant-col-4 {
+  display: block;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 16.66666667%;
+}
+.root-47 {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: none;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  position: relative;
+  height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+}
+.appointment-input {
+  margin-bottom: 20px;
+  position: relative;
+}
+.root-105 {
+  position: fixed;
+  z-index: 1000000;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+}
+.coin-54 {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+}
+.coin-54 {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+}
+.imageArea-56 {
+  position: relative;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  flex: 0 0 auto;
+}
+.profile-squared .ms-Persona-initials {
+  border-radius: 0 !important;
+  font-size: 14px;
+}
+.initials-66 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(0, 171, 169);
+  border-radius: 50%;
+}
+.image-60 {
+  position: absolute;
+  margin-right: 10px;
+  top: 0px;
+  left: 0px;
+  width: 40px;
+  height: 40px;
+  perspective: 1px;
+  overflow: hidden;
+  border-width: 0px;
+  border-style: initial;
+  border-color: initial;
+  border-image: initial;
+  border-radius: 50%;
+}
+.image-61 {
+  display: block;
+  opacity: 0;
+  width: 100%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.root-105 {
+  position: fixed;
+  z-index: 1000000;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+}
+.profile-squared .ms-Persona-details {
+  line-height: 1.5;
+}
+.details-48 {
+  padding-top: 0px;
+  padding-right: 24px;
+  padding-bottom: 0px;
+  padding-left: 16px;
+  min-width: 0px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.root-47 {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-size: 14px;
+  font-weight: 400;
+  box-shadow: none;
+  margin-top: 0px;
+  margin-right: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  padding-top: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+  padding-left: 0px;
+  box-sizing: border-box;
+  color: rgb(51, 51, 51);
+  position: relative;
+  height: 40px;
+  min-width: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.contentInner_dafe1696 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow-y: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-overflow-scrolling: touch;
+  /* -webkit-transform: translateZ(0); */
+  /* transform: translateZ(0); */
+}
+.secondaryText-50 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(102, 102, 102);
+  font-weight: 400;
+  font-size: 12px;
+  overflow: hidden;
+}
+.primaryText-49 {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: rgb(51, 51, 51);
+  font-weight: 400;
+  font-size: 14px;
+  overflow: hidden;
+}
+.profile-squared .ms-Persona-details {
+  line-height: 1.5;
+}
+.details-48 {
+  padding-top: 0px;
+  padding-right: 24px;
+  padding-bottom: 0px;
+  padding-left: 16px;
+  min-width: 0px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.tag-input-component .input {
+  border: none;
+  background: #fff;
+  display: block;
+  width: 100%;
+  padding: 5px;
+  border-bottom: 1px dotted #a6a6a6;
+}
+.initials-64 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(126, 56, 120);
+  border-radius: 50%;
+}
+.initials-143 {
+  color: rgb(255, 255, 255);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 40px;
+  height: 40px;
+  background-color: rgb(218, 83, 44);
+  border-radius: 50%;
+} 
+.flexContainer-95 {
+  display: flex;
+  height: 100%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-button {
+  background: #e3e3e3;
+  color: #212121;
+  border-radius: 3px
+}
+.delete-button, button:focus{
+  outline: none;
+}
+
+.delete-button:hover {
+  color: #fff;
+  background: #f44336
+} 

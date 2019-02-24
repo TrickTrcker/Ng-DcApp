@@ -33,7 +33,8 @@
               "node_modules/primeng/resources/primeng.min.css",
               "src/assets/css/apexo_style.css",
               "node_modules/quill/dist/quill.core.css", 
-              "node_modules/quill/dist/quill.snow.css"
+              "node_modules/quill/dist/quill.snow.css",
+              "node_modules/angular-calendar/css/angular-calendar.css"
             ],
             "scripts": [
               "node_modules/chart.js/dist/Chart.min.js",

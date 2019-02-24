@@ -1,5 +1,421 @@
 <div class="animated fadeIn apexo-body">
-  <p>
-    appointments-list works!
-  </p>
+  <div class="card appointments-style">
+    <div class="card-header">
+      <span class="float-left">
+        <button class="btn btn-square btn-sm btn-primary" (click)="appointment_display=true" type="button">
+          <i class="icon-plus icons font-lg mt-0"></i>
+          &nbsp;Book New Appointments </button>
+      </span>
+      <div class="input-group-prepend float-right">
+        <label class="switch switch-pill switch-label switch-sm switch-primary">
+          <input type="checkbox" class="switch-input" checked [(ngModel)]="appointmentsType">
+          <span class="switch-slider" data-checked="" data-unchecked=""></span>
+        </label>
+        <span *ngIf="appointmentsType" (click)="appointmentsType = !appointmentsType">
+          <label class="ms-Toggle-stateTex text-142">All appointments</label>
+        </span>
+        <span *ngIf="!appointmentsType" (click)="appointmentsType = !appointmentsType">
+          <label class="ms-Toggle-stateTex text-142">My appointments only</label>
+        </span>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="row text-center">
+        <div class="col-md-4">
+          <div class="btn-group">
+            <div class="btn btn-primary" mwlCalendarPreviousView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+              Previous
+            </div>
+            <div class="btn btn-outline-secondary" mwlCalendarToday [(viewDate)]="viewDate">
+              Today
+            </div>
+            <div class="btn btn-primary" mwlCalendarNextView [view]="view" [(viewDate)]="viewDate" (viewDateChange)="activeDayIsOpen = false">
+              Next
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 text-center">
+          <h3>{{ viewDate | calendarDate:(view + 'ViewTitle'):'en' }}</h3>
+        </div>
+        <div class="col-md-4">
+          <div class="btn-group">
+            <div class="btn btn-primary" (click)="view = CalendarView.Month" [class.active]="view === CalendarView.Month">
+              Month
+            </div>
+            <div class="btn btn-primary" (click)="view = CalendarView.Week" [class.active]="view === CalendarView.Week">
+              Week
+            </div>
+            <div class="btn btn-primary" (click)="view = CalendarView.Day" [class.active]="view === CalendarView.Day">
+              Day
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div>
+        <div [ngSwitch]="view">
+          <mwl-calendar-month-view *ngSwitchCase="CalendarView.Month" [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+            [activeDayIsOpen]="activeDayIsOpen" (dayClicked)="dayClicked($event.day)" (eventClicked)="handleEvent('Clicked', $event.event)"
+            (eventTimesChanged)="eventTimesChanged($event)">
+          </mwl-calendar-month-view>
+          <mwl-calendar-week-view *ngSwitchCase="CalendarView.Week" [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+            (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+          </mwl-calendar-week-view>
+          <mwl-calendar-day-view *ngSwitchCase="CalendarView.Day" [viewDate]="viewDate" [events]="events" [refresh]="refresh"
+            (eventClicked)="handleEvent('Clicked', $event.event)" (eventTimesChanged)="eventTimesChanged($event)">
+          </mwl-calendar-day-view>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <br /><br /><br /> -->
+  <!-- 
+  <h3>
+    Edit events
+    <button class="btn btn-primary pull-right" (click)="addEvent()">
+      Add new
+
+    </button>
+    <div class="clearfix"></div>
+  </h3>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Primary color</th>
+        <th>Secondary color</th>
+        <th>Starts at</th>
+        <th>Ends at</th>
+        <th>Remove</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let event of events; let index = index">
+        <td>
+          <input type="text" class="form-control" [(ngModel)]="event.title" (keyup)="refresh.next()" />
+        </td>
+        <td>
+          <input type="color" [(ngModel)]="event.color.primary" (change)="refresh.next()" />
+        </td>
+        <td>
+          <input type="color" [(ngModel)]="event.color.secondary" (change)="refresh.next()" />
+        </td>
+        <td>
+          <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.start" (ngModelChange)="refresh.next()"
+            [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
+            placeholder="Not set" />
+        </td>
+        <td>
+          <input class="form-control" type="text" mwlFlatpickr [(ngModel)]="event.end" (ngModelChange)="refresh.next()"
+            [altInput]="true" [convertModelValue]="true" [enableTime]="true" dateFormat="Y-m-dTH:i" altFormat="F j, Y H:i"
+            placeholder="Not set" />
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="events.splice(index, 1); refresh.next()">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody> 
+  </table> -->
+
+  <!-- <ng-template #modalContent let-close="close">
+    <div class="modal-header">
+      <h5 class="modal-title">Event action occurred</h5>
+      <button type="button" class="close" (click)="close()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div>
+        Action:
+        <pre>{{ modalData?.action }}</pre>
+      </div>
+      <div>
+        Event:
+        <pre>{{ modalData?.event | json }}</pre>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-secondary" (click)="close()">
+        OK
+      </button>
+    </div>
+  </ng-template> -->
+  <!-- <button (click)="Payment_display=true"></button> -->
+
+  <p-sidebar [(visible)]="appointment_display" [blockScroll]="true" position="right" styleClass="custom_sidebar ui-sidebar-md"
+    [showCloseIcon]="false" [modal]="true">
+    <div class="card custom_card">
+      <div class="card-header ui-g ms-CommandBar">
+        <div class="ui-g-12 no-padding">
+          <div class="root-71">
+            <div class=" coin-78">
+              <div class=" imageArea-80">
+                <div class="initials-95" aria-hidden="true">
+                  <span>F</span>
+                </div>
+                <div class=" image-84" style="width: 40px; height: 40px;">
+                  <img class=" image-85" alt="">
+                </div>
+              </div>
+            </div>
+            <div class="ms-Persona-details details-72">
+              <div class="primaryText-73">
+                <div class="ms-TooltipHost host_a3f87333">fdsfdsfds</div>
+              </div>
+              <div class="secondaryText-74">
+                <span>fdsfdsf</span>
+              </div>
+              <div class="tertiaryText-75">
+              </div>
+              <div class=" optionalText-76">
+              </div>
+            </div>
+            <span class="align-middle float-right">
+              <button type="button" (click)="treatment_display=false" class="close" aria-label="Close">
+                <span style="font-size: 25px" aria-hidden="true">&times;</span>
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+      <br />
+      <p-scrollPanel [style]="{width: '100%', height: '650px'}">
+        <div class="card-body">
+          <div class="card">
+            <div class="card-header" (click)="isCollapsedAppointmentInfo = !isCollapsedAppointmentInfo">
+              Appointment
+              <div class="card-header-actions">
+                <!-- <i class="icon-arrow-down icons font-1xl d-block mt-0"></i> -->
+                <i [ngClass]="{'icon-arrow-down': isCollapsedAppointmentInfo, 'icon-arrow-up': !isCollapsedAppointmentInfo}"
+                  class="icons font-1xl d-block mt-0"></i>
+              </div>
+            </div>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedAppointmentInfo">
+              <div class="row">
+                <div class="form-group col-sm-6 "><label for="txtappointmentDate">Date:</label>
+                  <input class="form-control" type="text" id="txtappointmentDate" mwlFlatpickr [altInput]="true"
+                    [convertModelValue]="true" [enableTime]="false" dateFormat="Y-m-d" altFormat="F j, Y" placeholder="Not set" />
+                  <br>
+                  <p class="insight">With <span class="num-3">3</span> other appointments</p>
+                </div>
+                <div class="form-group col-sm-6"><label for="txtappointmentTime">Time:</label>
+                  <input class="form-control" type="text" id="txtappointmentTime" mwlFlatpickr [convertModelValue]="true"
+                    time_24hr="false" dateFormat="H:i" [noCalendar]="true" [enableTime]="true" placeholder="Not set" />
+                </div>
+              </div>
+              <div class="form-group row appointments">
+                <div class="col-md-12">
+                  <p-listbox [options]="stafflist" [(ngModel)]="selectedStaff" multiple="multiple" checkbox="checkbox"
+                    filter="filter" optionLabel="name">
+                    <p-header>
+                      Operating Staff:
+                    </p-header>
+                  </p-listbox>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" (click)="isCollapsedCaseDetails = !isCollapsedCaseDetails">
+              Case Details
+              <div class="card-header-actions">
+                <i [ngClass]="{'icon-arrow-down': isCollapsedCaseDetails, 'icon-arrow-up': !isCollapsedCaseDetails}"
+                  class="icons font-1xl d-block mt-0"></i>
+              </div>
+            </div>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedCaseDetails">
+              <div class="row">
+                <div class="form-group col-sm-12"><label for="textarea-details">Details:</label>
+                  <textarea class="form-control" id="textarea-details" name="textarea-input" placeholder="Content.."
+                    style="margin-top: 0px; margin-bottom: 0px; height: 62px;"></textarea>
+                </div>
+              </div>
+              <div class="form-group row appointments">
+                <div class="col-md-12">
+                  <p-listbox [options]="treatmentlist" [(ngModel)]="selectedTreatment" multiple="multiple" checkbox="checkbox"
+                    filter="filter" optionLabel="name">
+                    <p-header>
+                      Treatment:
+                    </p-header>
+                  </p-listbox>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <hr class="appointment-hr">
+                  <div class="appointment-input prescription"><label>Involved Teeth:</label>
+                    <div class="tag-input-component">
+                      <p-dropdown [options]="teethItems" [(ngModel)]="selectedTeethItem" [style]="{'width':'450px'}"
+                        placeholder="Enter tooth number..." editable="true"></p-dropdown>
+                      <div>
+                        <span class="item">
+                          <button aria-label="Close" class="close" type="button">
+                            <span class="align-middle" style="font-size: 14px; margin: 5px;">36 - ┌ 6</span><span
+                              aria-hidden="true" style="font-size: 20px">×</span>
+                          </button>
+                        </span>
+                        <span class="item">
+                          <button aria-label="Close" class="close" type="button">
+                            <span class="align-middle" style="font-size: 14px; margin: 5px;">54 - D ┘</span><span
+                              aria-hidden="true" style="font-size: 20px">×</span>
+                          </button>
+                        </span>
+                        <span class="item">
+                          <button aria-label="Close" class="close" type="button">
+                            <span class="align-middle" style="font-size: 14px; margin: 5px;">53 - C ┘</span><span
+                              aria-hidden="true" style="font-size: 20px">×</span>
+                          </button>
+                        </span>
+                        <span class="item">
+                          <button aria-label="Close" class="close" type="button">
+                            <span class="align-middle" style="font-size: 14px; margin: 5px;">52 - B ┘</span><span
+                              aria-hidden="true" style="font-size: 20px">×</span>
+                          </button>
+                        </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                  <hr class="appointment-hr">
+                  <div class="appointment-input prescription"><label>Prescription: </label>
+                    <div class="tag-input-component prescription">
+                      <p-dropdown [options]="prescriptionitems" [(ngModel)]="selectedItem" [style]="{'width':'450px'}"
+                        placeholder="Select a prescription" editable="true"></p-dropdown>
+                    </div>
+                  </div>
+                  <div id="prescription-items">
+                    <div class="row">
+                      <div class="col-sm-7 m-b-5">
+                        <div class="root-47">
+                          <div class="coin-54">
+                            <div class="imageArea-56">
+                              <div class="ms-Persona-initials initials-64" aria-hidden="true"><i class="nav-icon icon-mouse"></i></div>
+                              <div class="image-60" style="width: 40px; height: 40px;"><img class="image-61" alt=""></div>
+                            </div>
+                          </div>
+                          <div class="ms-Persona-details details-48">
+                            <div class="primaryText-49">
+                              <div class="ms-TooltipHost host_a3f87333">Flagyl</div>
+                            </div>
+                            <div class="secondaryText-50">
+                              <div class="ms-TooltipHost host_a3f87333"> 250mg 3X1 tablet</div>
+                            </div>
+                            <div class="ms-Persona-tertiaryText tertiaryText-51"></div>
+                            <div class="ms-Persona-optionalText optionalText-52"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-5" style="text-align: right;">
+                        <button class="delete-button root-90" type="button">
+                          <i class="cui-trash icons font-lg d-block mt-0"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-sm-8 m-b-5">
+                        <div class="root-47">
+                          <div class="coin-54">
+                            <div class="imageArea-56">
+                              <div class="ms-Persona-initials  initials-66" aria-hidden="true"><i class="nav-icon icon-mouse"></i></div>
+                              <div class="image-60" style="width: 40px; height: 40px;"><img class="image-61" alt=""></div>
+                            </div>
+                          </div>
+                          <div class="ms-Persona-details details-48">
+                            <div class="primaryText-49">
+                              <div class="ms-TooltipHost host_a3f87333">Azithromycin</div>
+                            </div>
+                            <div class="secondaryText-50">
+                              <div class="ms-TooltipHost host_a3f87333"> 300mg 2X1 capsule</div>
+                            </div>
+                            <div class="ms-Persona-tertiaryText tertiaryText-51"></div>
+                            <div class="ms-Persona-optionalText optionalText-52"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-4" style="text-align: right;">
+                        <button class="delete-button root-90" type="button">
+                          <i class="cui-trash icons font-lg d-block mt-0"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <br />
+                  </div>
+                  <button _ngcontent-c14="" class="btn btn-square btn-sm btn-primary" type="button">
+                    <i _ngcontent-c14="" class="icon-printer icons font-lg mt-0"></i> &nbsp;Print Prescription</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" (click)="isCollapsedPrice = !isCollapsedPrice">
+              Expenses & Price
+              <div class="card-header-actions">
+                <i [ngClass]="{'icon-arrow-down': isCollapsedPrice, 'icon-arrow-up': !isCollapsedPrice}"
+                  class="icons font-1xl d-block mt-0"></i>
+              </div>
+            </div>
+            <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPrice">
+              <div class="row">
+                <div class="form-group col-sm-8">
+                  <label for="txtamount">Final price</label>
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" style="border:1px solid gray;border-radius:0px;">&#8377;</span>
+                    <input class="form-control" id="txtamount" placeholder="Total amount" type="text">
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-group-prepend col-sm-4">
+                  <label class="switch switch-pill switch-label switch-sm switch-primary">
+                    <input type="checkbox" class="switch-input" checked [(ngModel)]="paidStatus">
+                    <span class="switch-slider" data-checked="" data-unchecked=""></span>
+                  </label>
+                  <span *ngIf="paidStatus" (click)="paidStatus = !paidStatus">
+                    <label class="ms-Toggle-stateTex text-142">Paid</label>
+                  </span>
+                  <span *ngIf="!paidStatus" (click)="paidStatus = !paidStatus">
+                    <label class="ms-Toggle-stateTex text-142">UnPaid</label>
+                  </span>
+                </div>
+              </div>
+              <hr>
+            </div>
+          </div>
+          <div>
+            <button class="btn btn-square btn-sm btn-danger" (click)="isDelete=true" type="button">
+              <i class="cui-trash icons font-lg mt-0"></i>
+              &nbsp;Delete</button>
+          </div>
+        </div>
+        <br />
+        <br />
+      </p-scrollPanel>
+    </div>
+  </p-sidebar>
+
+
+  <p-sidebar [(visible)]="isDelete" position="bottom" styleClass="ui-sidebar-sm" [showCloseIcon]="false" [modal]="true"
+    [baseZIndex]="10000">
+    <div style="overflow-y: auto">
+      <p>Are you sure you want to delete this appointment?</p>
+      <div style="margin-top: 5px">
+        <button class="btn btn-square btn-sm btn-primary" (click)="isDelete=false" type="button">
+          <i class="icon-check icons font-lg mt-0"></i>
+          &nbsp;Confirm </button> &nbsp;
+        <button class="btn btn-square btn-sm btn-primary" (click)="isDelete=false" type="button">
+          <i class="icon-close icons font-lg mt-0"></i>
+          &nbsp;Cancel</button>
+      </div>
+    </div>
+    <br />
+  </p-sidebar>
 </div>
