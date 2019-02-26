@@ -208,10 +208,10 @@
                         <input type="checkbox" class="switch-input" checked [(ngModel)]="foodStatus">
                         <span class="switch-slider" data-checked="" data-unchecked=""></span>
                       </label>
-                      <span *ngIf="footStatus" (click)="footStatus = !footStatus">
+                      <span *ngIf="foodStatus" (click)="foodStatus = !foodStatus">
                         <label class="ms-Toggle-stateTex text-142">Before food</label>
                       </span>
-                      <span *ngIf="!footStatus" (click)="footStatus = !footStatus">
+                      <span *ngIf="!foodStatus" (click)="foodStatus = !foodStatus">
                         <label class="ms-Toggle-stateTex text-142">After food</label>
                       </span>
                     </div>
