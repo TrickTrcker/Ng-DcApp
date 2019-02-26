@@ -212,7 +212,7 @@
               <div class="form-group row appointments">
                 <div class="col-md-12">
                   <p-listbox [options]="stafflist" [(ngModel)]="selectedStaff" multiple="multiple" checkbox="checkbox"
-                    filter="filter" optionLabel="name">
+                    filter="filter" optionLabel="name" [style]="{'width':'100%'}">
                     <p-header>
                       Operating Staff:
                     </p-header>
@@ -238,7 +238,7 @@
               </div>
               <div class="form-group row appointments">
                 <div class="col-md-12">
-                  <p-listbox [options]="treatmentlist" [(ngModel)]="selectedTreatment" multiple="multiple" checkbox="checkbox"
+                  <p-listbox [options]="treatmentlist" [(ngModel)]="selectedTreatment" [style]="{'width':'100%'}" multiple="multiple" checkbox="checkbox"
                     filter="filter" optionLabel="name">
                     <p-header>
                       Treatment:
@@ -251,7 +251,7 @@
                   <hr class="appointment-hr">
                   <div class="appointment-input prescription"><label>Involved Teeth:</label>
                     <div class="tag-input-component">
-                      <p-dropdown [options]="teethItems" appendTo="body" [(ngModel)]="selectedTeethItem" [style]="{'width':'450px'}"
+                      <p-dropdown [options]="teethItems" appendTo="body" [(ngModel)]="selectedTeethItem" [style]="{'width':'100%'}"
                         placeholder="Enter tooth number..." editable="true"></p-dropdown>
                       <div>
                         <span class="item">
@@ -289,7 +289,7 @@
                   <hr class="appointment-hr">
                   <div class="appointment-input prescription"><label>Prescription: </label>
                     <div class="tag-input-component prescription">
-                      <p-dropdown [options]="prescriptionitems" [(ngModel)]="selectedItem" [style]="{'width':'450px'}"
+                      <p-dropdown [options]="prescriptionitems" [(ngModel)]="selectedItem" [style]="{'width':'100%'}"
                         placeholder="Select a prescription" editable="true"></p-dropdown>
                     </div>
                   </div>

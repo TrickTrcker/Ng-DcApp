@@ -919,12 +919,12 @@ h6 {
   border-radius: 20px;
   background: #b71c1c;
 }
-.appointments .ui-listbox {
+/* .appointments .ui-listbox {
   padding: 0 !important;
   min-width: 33em !important; 
   background: #ffffff !important;
   border: 1px solid #a6a6a6 !important;
-}
+} */
  
 .tag-input-component {
   position: relative;
