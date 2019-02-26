@@ -9,8 +9,9 @@ export class PrescriptionsListComponent implements OnInit {
 
   prescriptionsData: any = [];
   prescriptions_display: boolean = false;
-  isCollapsedPrescriptionsInfo: boolean = true;
+  isCollapsedPrescriptionsInfo: boolean = false;
   isDelete: boolean = false;
+  footStatus:boolean=false;
   constructor() { }
   collapsed(event: any): void {
     // console.log(event);

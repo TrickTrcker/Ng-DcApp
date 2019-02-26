@@ -6,15 +6,6 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-lg-12 col-md-12 col-sm-12">
-      <div class="chart-wrapper">
-        <canvas baseChart class="chart" [datasets]="barChartAppointmentsData" [labels]="barChartAppointmentsLabels" [options]="barChartAppointmentsOptions"
-          [legend]="barChartAppointmentsLegend" [chartType]="barChartAppointmentsType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-      </div>
-      <hr>
-    </div>
-  </div>
-  <div class="row">
     <div class="col-lg-6 col-md-12 col-sm-12">
       <div class="ui-lg-12 ui-md-12 ui-sm-12">
         <h5 class="appointments-table-heading ">Today's Appointments</h5>
@@ -160,4 +151,25 @@
       </div>
     </div>
   </div>
+  <br />
+  <hr>
+  <div class="row">
+    <div class="col-lg-12 col-md-12 col-sm-12">
+      <!-- <div class="card cl-section">
+        <div class="card-header">
+          Appointments By Date
+        </div>
+        <div class="card-body"> -->
+          <div class="chart-wrapper">
+            <canvas baseChart class="chart" [datasets]="barChartAppointmentsData" [labels]="barChartAppointmentsLabels"
+              [options]="barChartAppointmentsOptions" [legend]="barChartAppointmentsLegend" [chartType]="barChartAppointmentsType"
+              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+          </div>
+          <!-- <hr>
+        </div>
+      </div> -->
+      <hr>
+    </div>
+  </div>
+  <br />
 </div>

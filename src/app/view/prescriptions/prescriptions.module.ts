@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 import { PrescriptionsRoutingModule } from './prescriptions-routing.module';
 import { PrescriptionsListComponent } from './prescriptions-list/prescriptions-list.component';
@@ -18,6 +19,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
   declarations: [PrescriptionsListComponent],
   imports: [
     CommonModule,
+    FormsModule,
     PrescriptionsRoutingModule,
     SidebarModule,
     TableModule,

@@ -26,7 +26,7 @@
             <ng-template pTemplate="header">
               <tr>
                 <th [pSortableColumn]="name">
-                  Item name
+                    Name for tablets / syrup / ointment
                   <p-sortIcon [field]="name" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
                     ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
                 </th>
@@ -145,45 +145,85 @@
                 </div>
               </div>
               <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPrescriptionsInfo">
-                <div class="form-group">
-                  <label for="doctor">Item name</label>
-                  <input class="form-control" id="doctor" placeholder="" type="text">
+                <div class="row">
+                  <div class="form-group col-sm-12">
+                    <label for="doctor">Name for tablets / syrup / ointment</label>
+                    <input class="form-control" id="doctor" placeholder="" type="text">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="doctor">Dosage in mg</label>
-                  <input class="form-control" id="doctor" placeholder="" type="number">
+                <div class="row">
+                  <div class="form-group col-sm-12">
+                    <label for="doctor">Dosage in mg</label>
+                    <input class="form-control" id="doctor" placeholder="" type="number">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="doctor">Times per day</label>
-                  <input class="form-control" id="doctor" placeholder="" type="number">
+                <div class="row">
+                  <div class="form-group col-sm-12">
+                    <label for="doctor">Dosage in ml</label>
+                    <input class="form-control" id="doctor" placeholder="" type="number">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="doctor">Units per time</label>
-                  <input class="form-control" id="doctor" placeholder="" type="number">
+                <div class="row">
+                  <div class="form-group col-sm-4">
+                    <label for="txtappointmentDate">Morning:</label>
+                    <input class="form-control" type="number" id="txtappointmentDate" placeholder="" />
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="txtappointmentTime">Afternoon:</label>
+                    <input class="form-control" type="number" id="txtappointmentTime" placeholder="" />
+                  </div>
+                  <div class="form-group col-sm-4">
+                    <label for="txtappointmentTime">Night:</label>
+                    <input class="form-control" type="number" id="txtappointmentTime" placeholder="" />
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="doctor">Item form</label>
-                  <select class="form-control" id="exampleFormControlSelect1">
-                    <option value="1">ampoule</option>
-                    <option value="2">capsule</option>
-                    <option value="3">tablet</option>
-                    <option value="4">pill</option>
-                    <option value="5">gel</option>
-                    <option value="6">lotion</option>
-                    <option value="7">syrup</option>
-                    <option value="8">powder</option>
-                    <option value="9">mouthwash</option>
-                    <option value="10">suspension</option>
-                    <option value="11">toothpaste</option>
-                  </select>
+                <div class="row">
+                  <div class="form-group col-sm-12">
+                    <label for="doctor">Units per time</label>
+                    <input class="form-control" id="doctor" placeholder="" type="number">
+                  </div>
                 </div>
-                <div class="form-group">
-                  <div class="input-group-prepend">
-                    <label class="switch switch-pill switch-label switch-primary">
-                      <input type="checkbox" class="switch-input" checked>
-                      <span class="switch-slider" data-checked="Yes" data-unchecked="No"></span>
-                    </label>
-                    <label class="ms-Toggle-stateTex text-142">Active</label>
+                <div class="row">
+                  <div class="form-group col-sm-12">
+                    <label for="doctor">Item form</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option value="1">ampoule</option>
+                      <option value="2">capsule</option>
+                      <option value="3">tablet</option>
+                      <option value="4">pill</option>
+                      <option value="5">gel</option>
+                      <option value="6">lotion</option>
+                      <option value="7">syrup</option>
+                      <option value="8">powder</option>
+                      <option value="9">mouthwash</option>
+                      <option value="10">suspension</option>
+                      <option value="11">toothpaste</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-6">
+                    <div class="input-group-prepend">
+                      <label class="switch switch-pill switch-label switch-primary">
+                        <input type="checkbox" class="switch-input" checked [(ngModel)]="footStatus">
+                        <span class="switch-slider" data-checked="" data-unchecked=""></span>
+                      </label>
+                      <span *ngIf="footStatus" (click)="footStatus = !footStatus">
+                        <label class="ms-Toggle-stateTex text-142">Before foot</label>
+                      </span>
+                      <span *ngIf="!footStatus" (click)="footStatus = !footStatus">
+                        <label class="ms-Toggle-stateTex text-142">After foot</label>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-group col-sm-6">
+                    <div class="input-group-prepend">
+                      <label class="switch switch-pill switch-label switch-primary">
+                        <input type="checkbox" class="switch-input" checked>
+                        <span class="switch-slider" data-checked="Yes" data-unchecked="No"></span>
+                      </label>
+                      <label class="ms-Toggle-stateTex text-142">Active</label>
+                    </div>
                   </div>
                 </div>
               </div>
