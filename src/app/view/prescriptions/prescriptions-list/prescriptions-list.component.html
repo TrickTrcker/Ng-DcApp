@@ -205,14 +205,14 @@
                   <div class="form-group col-sm-6">
                     <div class="input-group-prepend">
                       <label class="switch switch-pill switch-label switch-primary">
-                        <input type="checkbox" class="switch-input" checked [(ngModel)]="footStatus">
+                        <input type="checkbox" class="switch-input" checked [(ngModel)]="foodStatus">
                         <span class="switch-slider" data-checked="" data-unchecked=""></span>
                       </label>
                       <span *ngIf="footStatus" (click)="footStatus = !footStatus">
-                        <label class="ms-Toggle-stateTex text-142">Before foot</label>
+                        <label class="ms-Toggle-stateTex text-142">Before food</label>
                       </span>
                       <span *ngIf="!footStatus" (click)="footStatus = !footStatus">
-                        <label class="ms-Toggle-stateTex text-142">After foot</label>
+                        <label class="ms-Toggle-stateTex text-142">After food</label>
                       </span>
                     </div>
                   </div>
