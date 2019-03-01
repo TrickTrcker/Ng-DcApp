@@ -26,7 +26,7 @@
             <ng-template pTemplate="header">
               <tr>
                 <th [pSortableColumn]="name">
-                    Name for tablets / syrup / ointment
+                  Name for tablets / syrup / ointment
                   <p-sortIcon [field]="name" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
                     ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
                 </th>
@@ -147,6 +147,24 @@
               <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPrescriptionsInfo">
                 <div class="row">
                   <div class="form-group col-sm-12">
+                    <label for="doctor">Item form</label>
+                    <select class="form-control" id="exampleFormControlSelect1">
+                      <option value="1">ampoule</option>
+                      <option value="2">capsule</option>
+                      <option value="3">tablet</option>
+                      <option value="4">pill</option>
+                      <option value="5">gel</option>
+                      <option value="6">lotion</option>
+                      <option value="7">syrup</option>
+                      <option value="8">powder</option>
+                      <option value="9">mouthwash</option>
+                      <option value="10">suspension</option>
+                      <option value="11">toothpaste</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="form-group col-sm-12">
                     <label for="doctor">Name for tablets / syrup / ointment</label>
                     <input class="form-control" id="doctor" placeholder="" type="text">
                   </div>
@@ -181,24 +199,6 @@
                   <div class="form-group col-sm-12">
                     <label for="doctor">Units per time</label>
                     <input class="form-control" id="doctor" placeholder="" type="number">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="form-group col-sm-12">
-                    <label for="doctor">Item form</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
-                      <option value="1">ampoule</option>
-                      <option value="2">capsule</option>
-                      <option value="3">tablet</option>
-                      <option value="4">pill</option>
-                      <option value="5">gel</option>
-                      <option value="6">lotion</option>
-                      <option value="7">syrup</option>
-                      <option value="8">powder</option>
-                      <option value="9">mouthwash</option>
-                      <option value="10">suspension</option>
-                      <option value="11">toothpaste</option>
-                    </select>
                   </div>
                 </div>
                 <div class="row">
