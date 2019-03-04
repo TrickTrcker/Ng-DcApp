@@ -27,23 +27,23 @@ export class PrescriptionsListComponent implements OnInit {
     this.prescriptionsData = [
       {
         name: 'Azithromycin',
-        item: '500mg 3X1 capsule',
+        item: '500mg 1-1-2 capsule',
         dose: '300 mg',
-        frequency: '2X1',
+        frequency: '1-0-1',
         from: "capsule"
       },
       {
         name: 'Amoxicillin',
-        item: '500mg 3X1 capsule',
+        item: '500mg 1-0-1 capsule',
         dose: '500 mg',
-        frequency: '3X1',
+        frequency: '1-0-1',
         from: "capsule"
       },
       {
         name: 'Flagyl',
-        item: '250mg 3X1 syrup',
+        item: '250mg 1-0-2 syrup',
         dose: '250 mg',
-        frequency: '3X1',
+        frequency: '1-0-2',
         from: "syrup"
       },
     ];

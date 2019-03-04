@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
 
 import { ViewRoutingModule } from './view-routing.module';
 import { DefaultLayoutComponent } from './default-layout.component';
@@ -39,7 +39,12 @@ import { EditorModule } from 'primeng/editor';
 // Collapse Component
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 @NgModule({
-  declarations: [DefaultLayoutComponent, HomeComponent, StatisticsComponent, SettingsComponent],
+  declarations: [
+    DefaultLayoutComponent,
+    HomeComponent,
+    StatisticsComponent,
+    SettingsComponent 
+  ],
   imports: [
     CommonModule,
     FormsModule,
@@ -58,7 +63,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
     CollapseModule,
     ScrollPanelModule,
     AccordionModule,
-    EditorModule    
+    EditorModule
   ]
 })
 export class ViewModule { }

@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms'; 
 
 import { PrescriptionsRoutingModule } from './prescriptions-routing.module';
 import { PrescriptionsListComponent } from './prescriptions-list/prescriptions-list.component';
@@ -10,6 +10,7 @@ import { SidebarModule } from 'primeng/sidebar';
 import { TableModule } from 'primeng/table';
 import { ScrollPanelModule } from 'primeng/scrollpanel';
 import { AccordionModule } from 'primeng/accordion';
+
 
 
 

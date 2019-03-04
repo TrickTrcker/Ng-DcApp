@@ -14,20 +14,22 @@
                 <button type="button" class="btn btn-light  btn-sm apex-btn">
                   <i class="icon-magnifier icons font-lg d-block mt-0"></i>
                 </button>
-                <input type="text" class="field-68" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                <input type="text" class="field-68" placeholder="Search" aria-label="Search"
+                  aria-describedby="basic-addon1">
               </div>
             </div>
           </div>
         </div>
         <br />
         <div class="col-lg-12 col-md-12 col-sm-12 dca-data-table">
-          <p-table [value]="prescriptionsData" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
-            sortMode="single">
+          <p-table [value]="prescriptionsData" [rows]="10" [responsive]="true"
+            tableStyleClass="ms-table ui-table-responsive" sortMode="single">
             <ng-template pTemplate="header">
               <tr>
                 <th [pSortableColumn]="name">
-                  Name for tablets / syrup / ointment
-                  <p-sortIcon [field]="name" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                  Drug Name
+                  <p-sortIcon [field]="name" ariaLabel="Activate to sort"
+                    ariaLabelDesc="Activate to sort in descending order"
                     ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
                 </th>
                 <th [pSortableColumn]="dose">
@@ -39,7 +41,7 @@
                   <p-sortIcon [field]="frequency"></p-sortIcon>
                 </th>
                 <th [pSortableColumn]="from">
-                  Form
+                  Drug Type
                   <p-sortIcon [field]="from"></p-sortIcon>
                 </th>
                 <th></th>
@@ -96,8 +98,8 @@
       </div>
     </div>
 
-    <p-sidebar [(visible)]="prescriptions_display" [blockScroll]="true" position="right" styleClass="custom_sidebar ui-sidebar-md"
-      [showCloseIcon]="false" [modal]="true">
+    <p-sidebar [(visible)]="prescriptions_display" [blockScroll]="true" position="right"
+      styleClass="custom_sidebar ui-sidebar-md" [showCloseIcon]="false" [modal]="true">
       <div class="card custom_card">
         <div class="card-header ui-g ms-CommandBar">
           <div class="ui-g-12 no-padding">
@@ -144,10 +146,11 @@
                     class="icons font-1xl d-block mt-0"></i>
                 </div>
               </div>
-              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPrescriptionsInfo">
+              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)"
+                [collapse]="isCollapsedPrescriptionsInfo">
                 <div class="row">
                   <div class="form-group col-sm-12">
-                    <label for="doctor">Item form</label>
+                    <label for="doctor">Drug Type</label>
                     <select class="form-control" id="exampleFormControlSelect1">
                       <option value="1">ampoule</option>
                       <option value="2">capsule</option>
@@ -160,12 +163,13 @@
                       <option value="9">mouthwash</option>
                       <option value="10">suspension</option>
                       <option value="11">toothpaste</option>
+                      <option value="12">ointment</option>
                     </select>
                   </div>
                 </div>
                 <div class="row">
                   <div class="form-group col-sm-12">
-                    <label for="doctor">Name for tablets / syrup / ointment</label>
+                    <label for="doctor">Drug Name</label>
                     <input class="form-control" id="doctor" placeholder="" type="text">
                   </div>
                 </div>
@@ -233,8 +237,8 @@
       </div>
     </p-sidebar>
 
-    <p-sidebar [(visible)]="isDelete" position="bottom" styleClass="ui-sidebar-sm" [showCloseIcon]="false" [modal]="true"
-      [baseZIndex]="10000">
+    <p-sidebar [(visible)]="isDelete" position="bottom" styleClass="ui-sidebar-sm" [showCloseIcon]="false"
+      [modal]="true" [baseZIndex]="10000">
       <div style="overflow-y: auto">
         <p>Are you sure you want to delete Amoxicillin's prescription.</p>
         <div style="margin-top: 5px">
