@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DoctorsListComponent implements OnInit {
   doctorData: any = [];
+  selecedItems: string = "";
   doctordetails_display: boolean = false;
   isCollapsedDoctorInfo: boolean = false;
   isCollapsedAppointments: boolean = true;

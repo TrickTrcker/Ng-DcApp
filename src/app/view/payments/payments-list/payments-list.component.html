@@ -14,7 +14,8 @@
                 <button type="button" class="btn btn-light  btn-sm apex-btn">
                   <i class="icon-magnifier icons font-lg d-block mt-0"></i>
                 </button>
-                <input type="text" class="field-68" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                <input type="text" class="field-68" placeholder="Search" aria-label="Search"
+                  aria-describedby="basic-addon1">
               </div>
             </div>
           </div>
@@ -27,7 +28,8 @@
               <tr>
                 <th [pSortableColumn]="treatment">
                   Patient
-                  <p-sortIcon [field]="treatment" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                  <p-sortIcon [field]="treatment" ariaLabel="Activate to sort"
+                    ariaLabelDesc="Activate to sort in descending order"
                     ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
                 </th>
                 <th [pSortableColumn]="expenses">
@@ -103,15 +105,15 @@
       </div>
     </div>
 
-    <p-sidebar [(visible)]="Payment_display" [blockScroll]="true" position="right" styleClass="custom_sidebar ui-sidebar-md"
-      [showCloseIcon]="false" [modal]="true">
+    <p-sidebar [(visible)]="Payment_display" [blockScroll]="true" position="right"
+      styleClass="custom_sidebar ui-sidebar-md" [showCloseIcon]="false" [modal]="true">
       <div class="card custom_card">
         <div class="card-header ui-g ms-CommandBar">
           <div class="ui-g-12 no-padding">
             <div class="root-71">
               <div class=" coin-78">
                 <div class=" imageArea-80">
-                  <div class="ms-Persona-initials initials-95" aria-hidden="true">
+                  <div class="initials-95" aria-hidden="true">
                     <span>F</span>
                   </div>
                   <div class=" image-84" style="width: 40px; height: 40px;">
@@ -151,11 +153,31 @@
                     class="icons font-1xl d-block mt-0"></i>
                 </div>
               </div>
-              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPaymentInfo">
+              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)"
+                [collapse]="isCollapsedPaymentInfo">
                 <div class="form-group row">
-                  <label class="col-md-4 col-form-label" for="text-input">Treatment</label>
+                  <label class="col-md-4 col-form-label" for="text-input">Consulting Fees</label>
                   <div class="col-md-8">
                     <div class="input-group-prepend">
+                      <span class="input-group-text login-span">&#8377;</span>
+                      <input class="form-control" id="doctor" placeholder="" type="number">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-4 col-form-label" for="text-input">Treatment Fees</label>
+                  <div class="col-md-8">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text login-span">&#8377;</span>
+                      <input class="form-control" id="doctor" placeholder="" type="number">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-4 col-form-label" for="text-input">Medicine Fees</label>
+                  <div class="col-md-8">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text login-span">&#8377;</span>
                       <input class="form-control" id="doctor" placeholder="" type="number">
                     </div>
                   </div>
@@ -164,7 +186,7 @@
                   <label class="col-md-4 col-form-label" for="text-input">Discount</label>
                   <div class="col-md-8">
                     <div class="input-group-prepend">
-                      <span class="input-group-text login-span" >&#8377;</span>
+                      <span class="input-group-text login-span">&#8377;</span>
                       <input class="form-control" id="doctor" placeholder="" type="number">
                     </div>
                   </div>
@@ -182,7 +204,7 @@
                   <label class="col-md-4 col-form-label" for="text-input">Current Payable</label>
                   <div class="col-md-8">
                     <div class="input-group-prepend">
-                      <span class="input-group-text login-span" >&#8377;</span>
+                      <span class="input-group-text login-span">&#8377;</span>
                       <input class="form-control" id="doctor" placeholder="" type="number">
                     </div>
                   </div>
@@ -208,6 +230,10 @@
                     </div>
                   </div>
                 </div>
+                <div class="form-group">
+                  <button _ngcontent-c14="" class="btn btn-square btn-sm btn-primary" type="button">
+                    <i _ngcontent-c14="" class="icon-printer icons font-lg mt-0"></i> &nbsp;Print Bill</button>
+                </div>
               </div>
             </div>
             <div class="card">
@@ -218,7 +244,8 @@
                     class="icons font-1xl d-block mt-0"></i>
                 </div>
               </div>
-              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)" [collapse]="isCollapsedPaymentHistory">
+              <div class="card-body" (collapsed)="collapsed($event)" (expanded)="expanded($event)"
+                [collapse]="isCollapsedPaymentHistory">
                 <div class="form-group">
                   <label for="doctor">Filter</label>
                   <input class="form-control" id="doctor" placeholder="search" type="text">
@@ -231,7 +258,8 @@
                       <div class="coin-78">
                         <div class="ms-Persona-imageArea imageArea-80">
                           <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
-                          <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          <div class="image-84" style="width: 40px; height: 40px;"><img
+                              class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
                               alt=""></div>
                         </div>
                       </div>
@@ -255,7 +283,8 @@
                       <div class="coin-78">
                         <div class="ms-Persona-imageArea imageArea-80">
                           <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
-                          <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          <div class="image-84" style="width: 40px; height: 40px;"><img
+                              class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
                               alt=""></div>
                         </div>
                       </div>
@@ -279,7 +308,8 @@
                       <div class="coin-78">
                         <div class="ms-Persona-imageArea imageArea-80">
                           <div class="ms-Persona-initials initials-120" aria-hidden="true"><span>AI</span></div>
-                          <div class="image-84" style="width: 40px; height: 40px;"><img class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
+                          <div class="image-84" style="width: 40px; height: 40px;"><img
+                              class="ms-Image-image ms-Image-image--cover ms-Image-image--portrait is-notLoaded is-fadeIn image-85"
                               alt=""></div>
                         </div>
                       </div>
@@ -305,8 +335,8 @@
         </p-scrollPanel>
       </div>
     </p-sidebar>
-    <p-sidebar [(visible)]="isDelete" position="bottom" styleClass="ui-sidebar-sm" [showCloseIcon]="false" [modal]="true"
-      [baseZIndex]="10000">
+    <p-sidebar [(visible)]="isDelete" position="bottom" styleClass="ui-sidebar-sm" [showCloseIcon]="false"
+      [modal]="true" [baseZIndex]="10000">
       <div style="overflow-y: auto">
         <p>Are you sure you want to delete this payment?</p>
         <div style="margin-top: 5px">

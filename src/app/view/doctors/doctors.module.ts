@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 //prime cmodules
 import { SidebarModule } from 'primeng/sidebar';
@@ -20,6 +21,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
   declarations: [DoctorsListComponent],
   imports: [
     CommonModule,
+    FormsModule,
     DoctorsRoutingModule,
     SidebarModule,
     TableModule,

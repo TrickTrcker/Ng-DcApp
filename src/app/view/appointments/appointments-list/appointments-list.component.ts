@@ -134,6 +134,12 @@ export class AppointmentsListComponent implements OnInit {
       { label: 'Amoxicillin', value: '2' },
       { label: 'Flagyl', value: '3' }
     ];
+    this.teethItems = [
+      { label: '36 - ┌ 6', value: '1' },
+      { label: '54 - D ┘', value: '2' },
+      { label: '53 - C ┘', value: '3' },
+      { label: '52 - B ┘', value: '4' }
+    ];
     this.treatmentlist = [
       { name: 'Rx Only', code: '1' },
       { name: 'XRay - Bitewing', code: '2' },
@@ -142,12 +148,6 @@ export class AppointmentsListComponent implements OnInit {
       { name: 'Composite C IV', code: '5' },
       { name: 'XRay - Periapical', code: '6' },
       { name: 'Crowning', code: '7' }
-    ];
-    this.teethItems = [
-      { label: '36 - ┌ 6', value: '1' },
-      { label: '54 - D ┘', value: '2' },
-      { label: '53 - C ┘', value: '3' },
-      { label: '52 - B ┘', value: '4' }
     ];
   }
   // private modal: NgbModal

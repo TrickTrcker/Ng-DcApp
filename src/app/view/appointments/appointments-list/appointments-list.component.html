@@ -251,8 +251,8 @@
                   <hr class="appointment-hr">
                   <div class="appointment-input prescription"><label>Involved Teeth:</label>
                     <div class="tag-input-component">
-                      <p-dropdown [options]="teethItems" appendTo="body" [(ngModel)]="selectedTeethItem" [style]="{'width':'100%'}"
-                        placeholder="Enter tooth number..." editable="true"></p-dropdown>
+                      <p-dropdown [options]="teethItems" [(ngModel)]="selectedTeethItem" [style]="{'width':'100%'}"
+                        placeholder="Enter tooth number" editable="false"></p-dropdown>
                       <div>
                         <span class="item">
                           <button aria-label="Close" class="close" type="button">
@@ -290,7 +290,7 @@
                   <div class="appointment-input prescription"><label>Prescription: </label>
                     <div class="tag-input-component prescription">
                       <p-dropdown [options]="prescriptionitems" [(ngModel)]="selectedItem" [style]="{'width':'100%'}"
-                        placeholder="Select a prescription" editable="true"></p-dropdown>
+                        placeholder="Select a prescription" editable="false"></p-dropdown>
                     </div>
                   </div>
                   <div id="prescription-items">

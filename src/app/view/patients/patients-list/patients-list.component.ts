@@ -8,15 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class PatientsListComponent implements OnInit {
 
   doctorData: any = [];
+  selecedItems: string = "0";
+  selecedMaritalStatus: string = "0";
   doctordetails_display: boolean = false;
   isCollapsedDoctorInfo: boolean = false;
   isCollapsedAppointments: boolean = true;
   isCollapsedDentalInfo: boolean = true;
-  TeethInfo_display : boolean=false;
+  TeethInfo_display: boolean = false;
   isDelete: boolean = false;
   isDeleteAppointment: boolean = false;
   constructor() {
-
   }
   collapsed(event: any): void {
     // console.log(event);

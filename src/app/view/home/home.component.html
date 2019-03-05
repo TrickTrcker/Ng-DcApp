@@ -1,7 +1,7 @@
 <div class="animated fadeIn apexo-body">
   <div class="row">
     <div class="col-lg-12 col-md-12 col-sm-12">
-      <h5>Welcome, Dr. Adam Smith</h5>
+      <h5>Welcome, THENU DENTAL HOSPITAL </h5>
       <hr>
     </div>
   </div>
@@ -11,13 +11,14 @@
         <h5 class="appointments-table-heading ">Today's Appointments</h5>
       </div>
       <div class="ui-lg-12 ui-md-12 ui-sm-12 dca-data-table">
-        <p-table [value]="todayAppointments" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
-          sortMode="single">
+        <p-table [value]="todayAppointments" [rows]="10" [responsive]="true"
+          tableStyleClass="ms-table ui-table-responsive" sortMode="single">
           <ng-template pTemplate="header">
             <tr>
               <th [pSortableColumn]="treatment">
                 Appointment
-                <p-sortIcon [field]="treatment" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                <p-sortIcon [field]="treatment" ariaLabel="Activate to sort"
+                  ariaLabelDesc="Activate to sort in descending order"
                   ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
               </th>
               <th [pSortableColumn]="doctor">
@@ -83,13 +84,14 @@
         <h5 class="appointments-table-heading ">Tomorrow's Appointments</h5>
       </div>
       <div class="ui-lg-12 ui-md-12 ui-sm-12 dca-data-table">
-        <p-table [value]="tomorrowAppointments" [rows]="10" [responsive]="true" tableStyleClass="ms-table ui-table-responsive"
-          sortMode="single">
+        <p-table [value]="tomorrowAppointments" [rows]="10" [responsive]="true"
+          tableStyleClass="ms-table ui-table-responsive" sortMode="single">
           <ng-template pTemplate="header">
             <tr>
               <th [pSortableColumn]="treament">
                 Appointment
-                <p-sortIcon [field]="treatment" ariaLabel="Activate to sort" ariaLabelDesc="Activate to sort in descending order"
+                <p-sortIcon [field]="treatment" ariaLabel="Activate to sort"
+                  ariaLabelDesc="Activate to sort in descending order"
                   ariaLabelAsc="Activate to sort in ascending order"></p-sortIcon>
               </th>
               <th [pSortableColumn]="doctor">
@@ -160,12 +162,13 @@
           Appointments By Date
         </div>
         <div class="card-body"> -->
-          <div class="chart-wrapper">
-            <canvas baseChart class="chart" [datasets]="barChartAppointmentsData" [labels]="barChartAppointmentsLabels"
-              [options]="barChartAppointmentsOptions" [legend]="barChartAppointmentsLegend" [chartType]="barChartAppointmentsType"
-              (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
-          </div>
-          <!-- <hr>
+      <div class="chart-wrapper">
+        <canvas baseChart class="chart" [datasets]="barChartAppointmentsData" [labels]="barChartAppointmentsLabels"
+          [options]="barChartAppointmentsOptions" [legend]="barChartAppointmentsLegend"
+          [chartType]="barChartAppointmentsType" (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"></canvas>
+      </div>
+      <!-- <hr>
         </div>
       </div> -->
       <hr>

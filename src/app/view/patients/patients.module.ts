@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { FormsModule } from '@angular/forms';
 //prime cmodules
 import { SidebarModule } from 'primeng/sidebar';
 import { TableModule } from 'primeng/table';
@@ -10,19 +10,20 @@ import { AccordionModule } from 'primeng/accordion';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 
 import { PatientsRoutingModule } from './patients-routing.module';
-import { PatientsListComponent } from './patients-list/patients-list.component';
+import { PatientsListComponent } from './patients-list/patients-list.component'; 
 
 @NgModule({
   declarations: [PatientsListComponent],
   imports: [
     CommonModule,
+    FormsModule,
     PatientsRoutingModule,
     CommonModule,
     SidebarModule,
     TableModule,
     CollapseModule,
     ScrollPanelModule,
-    AccordionModule
+    AccordionModule 
   ]
 })
 export class PatientsModule { }
