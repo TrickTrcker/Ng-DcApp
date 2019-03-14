@@ -1,0 +1,23 @@
+.opsheet-template{
+    font-size: 25px;
+    line-height: 35px;
+}
+.content_input {
+    display: block;
+    margin:5px;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #0000;
+    background-color: #fff;
+    /* background-clip: padding-box; */
+    border: none;
+    /* border-radius: 0rem; */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.content_input:focus {
+    outline: none !important;
+}
+.w_45px{
+    width: 45x;
+}

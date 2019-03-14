@@ -15,10 +15,11 @@ import { AccordionModule } from 'primeng/accordion';
 
 // Collapse Component
 import { CollapseModule } from 'ngx-bootstrap/collapse';
+import { WorkSheetComponent } from './work-sheet/work-sheet.component';
 
 
 @NgModule({
-  declarations: [PatientReportComponent],
+  declarations: [PatientReportComponent, WorkSheetComponent],
   imports: [
     CommonModule,
     ReportsRoutingModule,
